@@ -1,7 +1,12 @@
+trigger:
+  branches:
+    include:
+      - master
+
 jobs:
   - job:
     displayName: 'Build Job'
     steps:
       - script: yarn --production
-        workingDirectory: '/packages/app'
+        workingDirectory: 'packages/app'
         name: 'build'
