@@ -1,6 +1,10 @@
 {
   "name": "@project/app",
   "version": "0.0.1",
+  "description": "Main application",
+  "author": "Bertie Blackman <blackmanrgh@gmail.com>",
+  "homepage": "https://github.com/covertbert/bertie-blackman#readme",
+  "license": "ISC",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -15,5 +19,12 @@
   },
   "devDependencies": {
     "gatsby-plugin-typescript": "^2.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/covertbert/bertie-blackman.git"
+  },
+  "bugs": {
+    "url": "https://github.com/covertbert/bertie-blackman/issues"
   }
 }
