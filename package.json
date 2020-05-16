@@ -1,5 +1,5 @@
 {
-  "name": "bertie-blackman",
+  "name": "@project/root",
   "private": true,
   "description": "My site",
   "version": "0.0.1",
@@ -21,7 +21,9 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.2",
+    "husky": "^4.2.5",
     "lerna": "^3.21.0",
+    "lint-staged": "^10.2.2",
     "prettier": "2.0.4",
     "typescript": "^3.8.3"
   }
