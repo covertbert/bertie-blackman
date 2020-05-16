@@ -9,4 +9,9 @@ jobs:
     steps:
       - script: yarn --production
         workingDirectory: 'packages/app'
-        name: 'build'
+        name: 'yarnInstall'
+        displayName: 'Yarn Install'
+      - script: yarn build
+        workingDirectory: 'packages/app'
+        name: 'gaysbyBuild'
+        displayName: 'Gatsby Build'
