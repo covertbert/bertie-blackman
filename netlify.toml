@@ -1,8 +1,0 @@
-[build]
-  base = "packages/app"
-  
-  environment = { NODE_VERSION = "12.13.1" }
-
-  publish = "packages/app/public/"
-
-  command = "yarn build"

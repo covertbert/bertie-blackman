@@ -1,0 +1,7 @@
+jobs:
+  - job:
+    displayName: 'Build Job'
+    steps:
+      - script: yarn --production
+        workingDirectory: '/packages/app'
+        name: 'build'
