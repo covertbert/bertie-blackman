@@ -7,6 +7,7 @@ jobs:
   - job:
     displayName: 'Build'
     steps:
+      - script: echo 'it is $(storageAccountName) and $(accountSubscription)'
       - script: yarn --production
         workingDirectory: 'packages/app'
         name: 'yarnInstall'
@@ -21,4 +22,4 @@ jobs:
           azureSubscription: $(accountSubscription)
           scriptType: bash
           scriptLocation: inlineScript
-          inlineScript: az storage blob upload-batch --account-key $(storageAccountKey) --account-name $(storageAccountName) --source ./public --destination '$web'
+          inlineScript: az storage blob upload-batch --account-name $(storageAccountName) --source ./public --destination '$web'
