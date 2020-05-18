@@ -15,3 +15,10 @@ jobs:
         workingDirectory: 'packages/app'
         name: 'gaysbyBuild'
         displayName: 'Gatsby Build'
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: '$(Build.SourcesDirectory)/dist'
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          replaceExistingArchive: true
+      - task: PublishBuildArtifacts@1
