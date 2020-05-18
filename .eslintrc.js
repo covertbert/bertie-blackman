@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 0,
     'no-console': 1, // Avoid leaving console logs behind
     'prefer-template': 1, // Prefer template strings
+    '@typescript-eslint/no-unused-vars': 0,
   },
   overrides: [
     {

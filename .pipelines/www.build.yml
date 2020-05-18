@@ -5,7 +5,7 @@ trigger:
 
 jobs:
   - job:
-    displayName: 'Build Job'
+    displayName: 'Build'
     steps:
       - script: yarn --production
         workingDirectory: 'packages/app'
