@@ -8,8 +8,8 @@
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js",
     "format": "prettier --write \"**/*.{js,json,md}\"",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
+    "tsc:repo": "tsc -p ./tsconfig.json --noEmit",
+    "type-check:watch": "yarn tsc:repo --watch",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "devDependencies": {
