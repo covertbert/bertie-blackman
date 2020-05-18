@@ -13,12 +13,12 @@ jobs:
         displayName: 'Yarn Install'
       - script: yarn build
         workingDirectory: 'packages/app'
-        name: 'gaysbyBuild'
+        name: 'gatsbyBuild'
         displayName: 'Gatsby Build'
       - task: AzureCLI@2
-        displayName: Azure CLI
+        displayName: Deploy
         inputs:
           azureSubscription: $(accountSubscription)
           scriptType: bash
           scriptLocation: inlineScript
-          inlineScript: az storage blob upload-batch --account-name $(storageAccountName) --source ./public -d '$web'
+          inlineScript: az storage blob upload-batch --account-name $(storageAccountName) --source ./public --destination '$web'
