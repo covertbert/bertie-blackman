@@ -15,10 +15,10 @@ jobs:
         workingDirectory: 'packages/app'
         name: 'gaysbyBuild'
         displayName: 'Gatsby Build'
-      - task: ArchiveFiles@2
+      - task: AzureCLI@2
+        displayName: Azure CLI
         inputs:
-          rootFolderOrFile: '$(Build.SourcesDirectory)/public'
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-          replaceExistingArchive: true
-      - task: PublishBuildArtifacts@1
+          azureSubscription: $(accountSubscription)
+          scriptType: bash
+          scriptLocation: inlineScript
+          inlineScript: az storage blob upload-batch --account-name $(storageAccountName) --source ./public -d '$web'

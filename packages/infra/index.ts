@@ -13,6 +13,9 @@ const storageAccount = new azure.storage.Account('staging', {
   accountTier: 'Standard',
   accountKind: 'StorageV2',
   accountReplicationType: 'LRS',
+  staticWebsite: {
+    indexDocument: 'index.html',
+  },
 })
 
 export const staticEndpoint = storageAccount.primaryWebEndpoint
