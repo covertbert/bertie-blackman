@@ -21,4 +21,4 @@ jobs:
           azureSubscription: $(accountSubscription)
           scriptType: bash
           scriptLocation: inlineScript
-          inlineScript: az storage blob upload-batch --account-name $(storageAccountName) --source ./public --destination '$web'
+          inlineScript: az storage blob upload-batch --account-key $(storageAccountKey) --account-name $(storageAccountName) --source ./public --destination '$web'
