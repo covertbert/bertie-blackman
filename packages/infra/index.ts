@@ -5,6 +5,10 @@ import * as azure from '@pulumi/azure'
 const resourceGroup = new azure.core.ResourceGroup('resourceGroup')
 
 console.log('hello')
+console.log('hello')
+console.log('hello')
+console.log('hello')
+console.log('hello')
 
 // Create an Azure resource (Storage Account)s
 const account = new azure.storage.Account('storage', {
