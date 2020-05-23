@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SEO from '../components/seo.component'
+import SEO from '../components/seo'
 
 const App = () => (
   <div>
