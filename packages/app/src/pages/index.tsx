@@ -4,7 +4,7 @@ import SEO from '../components/seo.component'
 
 const App = () => (
   <div>
-    <SEO />
+    <SEO lang="en" />
     Hello world!
   </div>
 )
