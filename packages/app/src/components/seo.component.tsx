@@ -4,10 +4,10 @@ import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
 
 interface SEOProps {
-  title: string
-  description: string
-  image: string
-  article: boolean
+  title?: string
+  description?: string
+  image?: string
+  article?: boolean
 }
 
 const query = graphql`
