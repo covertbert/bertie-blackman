@@ -38,7 +38,7 @@ const SEO: React.FC<SEOProps> = ({
     <Helmet
       title={seo.title}
       titleTemplate={titleTemplate}
-      htmlAttributes={{ lang }}
+      htmlAttributes={{ lang: seo.lang }}
     >
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
