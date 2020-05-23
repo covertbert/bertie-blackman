@@ -71,7 +71,7 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <meta lang={lang} />
+      <html lang={lang} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
