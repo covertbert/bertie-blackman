@@ -5,9 +5,24 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 interface SEOProps {
   title?: string
+  lang?: string
   description?: string
   image?: string
   article?: boolean
+}
+
+interface SiteData {
+  site: {
+    siteMetadata: {
+      defaultTitle: string
+      defaultLang: string
+      titleTemplate: string
+      defaultDescription: string
+      siteUrl: string
+      defaultImage: string
+      twitterUsername: string
+    }
+  }
 }
 
 const query = graphql`
@@ -15,6 +30,7 @@ const query = graphql`
     site {
       siteMetadata {
         defaultTitle: title
+        defaultLang: lang
         titleTemplate
         defaultDescription: description
         siteUrl: url
@@ -27,15 +43,17 @@ const query = graphql`
 
 const SEO: React.FC<SEOProps> = ({
   title,
+  lang,
   description,
   image,
   article = false,
 }) => {
   const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+  const { site } = useStaticQuery<SiteData>(query)
 
   const {
     defaultTitle,
+    defaultLang,
     titleTemplate,
     defaultDescription,
     siteUrl,
@@ -45,6 +63,7 @@ const SEO: React.FC<SEOProps> = ({
 
   const seo = {
     title: title || defaultTitle,
+    lang: lang || defaultLang,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
@@ -52,6 +71,7 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
+      <meta lang={lang} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}

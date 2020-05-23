@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Severus Snape',
+    title: 'Bertie Blackman',
+    lang: 'en',
     titleTemplate: '%s · The Real Hero',
     description:
       'Hogwarts Potions master, Head of Slytherin house and former Death Eater.',
