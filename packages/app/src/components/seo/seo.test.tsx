@@ -3,8 +3,13 @@ import { render } from '@testing-library/react'
 
 import SEO from './seo.component'
 
-describe('it', () => {
-  it('tests', () => {
-    render(<SEO />)
+jest.mock('@reach/router', () => ({
+  useLocation: () => ({ pathname: 'mock-pathname' }),
+}))
+
+describe('SEO', () => {
+  it('renders', () => {
+    const { debug } = render(<SEO />)
+    debug()
   })
 })
