@@ -17,6 +17,7 @@ module.exports = {
     'no-console': 1, // Avoid leaving console logs behind
     'prefer-template': 1, // Prefer template strings
     '@typescript-eslint/no-unused-vars': 0,
+    'react/self-closing-comp': 1,
   },
   overrides: [
     {

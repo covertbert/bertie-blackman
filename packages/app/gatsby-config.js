@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Bertie Blackman',
+    title: 'bertie blackman',
     lang: 'en',
-    titleTemplate: '%s · The Real Hero',
+    titleTemplate: '%s · bertie blackman',
     description: 'A portfolio',
     url: 'https://bertie.dev', // No trailing slash allowed!
     image: '/images/snape.jpg', // Path to your image you placed in the 'static' folder

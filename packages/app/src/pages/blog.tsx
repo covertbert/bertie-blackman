@@ -5,9 +5,9 @@ import SEO from '../components/seo'
 
 const App = () => (
   <>
-    <SEO title="home" />
+    <SEO title="blog" />
     <Header />
-    <h1>Hello world!</h1>
+    <h1>Blog</h1>
   </>
 )
 

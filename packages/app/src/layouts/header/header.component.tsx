@@ -7,8 +7,16 @@ const Header: React.FC = () => (
 
     <nav>
       <ul>
-        <li>portfolio</li>
-        <li>blog</li>
+        <li>
+          <Link activeStyle={{ color: 'red' }} to="/work">
+            work
+          </Link>
+        </li>
+        <li>
+          <Link activeStyle={{ color: 'red' }} to="/blog">
+            blog
+          </Link>
+        </li>
         <li>github</li>
       </ul>
     </nav>
