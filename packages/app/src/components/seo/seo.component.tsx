@@ -1,10 +1,27 @@
 import React from 'react'
+
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 import { useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import { SEOProps, SiteData } from './types'
-import { siteQuery } from './queries'
+
+export const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        defaultLang: lang
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+        twitterUsername
+      }
+    }
+  }
+`
 
 const SEO: React.FC<SEOProps> = ({
   title,
@@ -14,7 +31,7 @@ const SEO: React.FC<SEOProps> = ({
   article = false,
 }) => {
   const { pathname } = useLocation()
-  const { site } = useStaticQuery<SiteData>(siteQuery)
+  const { site } = useStaticQuery<SiteData>(query)
 
   const {
     defaultTitle,
