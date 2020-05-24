@@ -1,6 +1,6 @@
 import Typography from 'typography'
-import funstonTheme from 'typography-theme-noriega'
+import theme from 'typography-theme-noriega'
 
-const typography = new Typography(funstonTheme)
+const typography = new Typography(theme)
 
 export default typography
