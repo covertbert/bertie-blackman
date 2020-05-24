@@ -28,7 +28,7 @@ module.exports = {
       siteMetadata: {
         title: 'Mock Site',
         lang: 'en',
-        titleTemplate: '%s · The Real Hero',
+        titleTemplate: '%s · Mock Land',
         description: 'We all mock here',
         url: 'https://www.mock.com',
       },
