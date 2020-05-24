@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const Header: React.FC = () => (
-  <header>
+  <header className="font-display">
     <Link to="/">bertieblackman</Link>
 
     <nav>

@@ -24,9 +24,17 @@
     "@testing-library/react": "^10.0.4",
     "@types/jest": "^25.2.3",
     "@types/react-helmet": "^6.0.0",
+    "@types/typography": "^0.16.3",
+    "gatsby-plugin-postcss": "^2.3.2",
+    "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-typescript": "^2.3.5",
+    "gatsby-plugin-typography": "^2.5.2",
     "jest": "^26.0.1",
-    "ts-jest": "^26.0.0"
+    "react-typography": "^0.16.19",
+    "tailwindcss": "^1.4.6",
+    "ts-jest": "^26.0.0",
+    "typography": "^0.16.19",
+    "typography-theme-noriega": "^0.16.19"
   },
   "repository": {
     "type": "git",

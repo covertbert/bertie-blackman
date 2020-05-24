@@ -4,9 +4,26 @@ module.exports = {
     lang: 'en',
     titleTemplate: '%s · bertie blackman',
     description: 'A portfolio',
-    url: 'https://bertie.dev', // No trailing slash allowed!
-    image: '/images/snape.jpg', // Path to your image you placed in the 'static' folder
+    url: 'https://bertie.dev',
+    image: '/images/snape.jpg',
   },
-  /* Your site config here */
-  plugins: ['gatsby-plugin-typescript', 'gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: false,
+        develop: false,
+        tailwind: true,
+      },
+    },
+  ],
 }
