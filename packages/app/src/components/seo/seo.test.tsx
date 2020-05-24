@@ -3,7 +3,7 @@ import { render, waitFor } from '@testing-library/react'
 
 import SEO from './seo.component'
 import { SEOProps } from './types'
-import { getMetaTagValue } from '../../../test/helpers'
+import { getMetaTagContent } from '../../../test/helpers'
 
 jest.mock('@reach/router', () => ({
   useLocation: () => ({ pathname: 'mock-pathname' }),
@@ -20,7 +20,7 @@ describe('SEO', () => {
 
     await waitFor(() => {
       expect(document.title).toEqual(`${props.title} · Mock Land`)
-      expect(getMetaTagValue('description')).toEqual(props.description)
+      expect(getMetaTagContent('description')).toEqual(props.description)
     })
   })
 })

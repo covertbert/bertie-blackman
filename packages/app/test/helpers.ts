@@ -1,13 +1,13 @@
-const getMetaTagValue = (metaName: string) => {
-  const metaTags = document.getElementsByTagName('meta')
+const getMetaTagContent = (name: string) => {
+  const matchingTags = Object.values(
+    document.getElementsByTagName('meta'),
+  ).filter(tag => tag.name === name)
 
-  for (let i = 0; i < metaTags.length; i++) {
-    if (metaTags[i].getAttribute('name') === metaName) {
-      return metaTags[i].getAttribute('content')
-    }
+  if (matchingTags[0]) {
+    return matchingTags[0].getAttribute('content')
   }
 
-  return ''
+  throw new Error('There are no meta tags that match the input name')
 }
 
-export { getMetaTagValue }
+export { getMetaTagContent }
