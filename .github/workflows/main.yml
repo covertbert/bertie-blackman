@@ -1,4 +1,4 @@
-name: Testing cache
+name: Build & Test
 
 on: push
 
