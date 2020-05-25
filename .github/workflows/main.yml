@@ -20,6 +20,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Yarn install
+        working-directory: packages/app
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn
 
@@ -54,7 +55,9 @@ jobs:
         run: yarn lint
 
       - name: Type check
-        run: yarn tsc:repo
+        run: |
+          yarn tsc:app
+          yarn tsc:e2e
 
       - name: Unit tests
         working-directory: packages/app
