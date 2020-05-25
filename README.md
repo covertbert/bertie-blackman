@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to bertie-blackman 👋</h1>
+<h1 align="center">Welcome to my portfolio 👋</h1>
 <p>
   <a href="https://app.netlify.com/sites/bertie-blackman/deploys" target="_blank">
     <img alt="Netlify" src="https://api.netlify.com/api/v1/badges/2fec8ec7-43dd-499a-8fdb-3e71a482f134/deploy-status" />
@@ -38,4 +38,3 @@ yarn test
 
 - Github: [@covertbert](https://github.com/covertbert)
 - LinkedIn: [@bertie-blackman-3654767a](https://linkedin.com/in/bertie-blackman-3654767a)
-  s
