@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@master
         with:
           path: packages/app/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Yarn install
         working-directory: packages/app
@@ -40,7 +40,7 @@ jobs:
           path: |
             node_modules
             packages/**/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Lerna bootstrap
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
