@@ -10,6 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/@typescript-eslint',
+    'plugin:jsx-a11y/strict',
   ],
   rules: {
     'react/prop-types': 0, // Disable prop-types as we use TypeScript for type checking
