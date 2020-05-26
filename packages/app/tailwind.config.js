@@ -1,7 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 module.exports = {
   purge: false,
   theme: {
+    fontFamily: {
+      display: ['Bebas Neue', 'sans-serif'],
+      body: ['Roboto', 'sans-serif'],
+    },
     extend: {
       colors: {
         white: '#ffffff',
