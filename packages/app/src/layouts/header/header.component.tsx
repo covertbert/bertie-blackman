@@ -6,12 +6,12 @@ import { Navigation, NavigationItem } from '../../components/navigation'
 const GITHUB_URL = 'https://github.com/covertbert/'
 
 const Header: React.FC = () => (
-  <div className="flex items-center bg-gray-800 p-3 flex-wrap">
+  <div className="flex items-center bg-pink-800 p-3 flex-wrap">
     <Logo />
     <Navigation>
-      <NavigationItem to="/work" label="Work" />
-      <NavigationItem to="/blog" label="Blog" />
-      <NavigationItem external to={GITHUB_URL} label="GitHub" />
+      <NavigationItem to="/work" label="work" />
+      <NavigationItem to="/blog" label="blog" />
+      <NavigationItem external to={GITHUB_URL} label="github" />
     </Navigation>
   </div>
 )

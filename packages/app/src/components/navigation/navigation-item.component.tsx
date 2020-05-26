@@ -13,11 +13,10 @@ const linkClasses = `
   w-full 
   px-3 
   py-2 
-  text-gray-400 
+  text-white 
   items-center 
   justify-center 
-  hover:bg-gray-900 
-  hover:text-white
+  hover:underline
 `
 
 const NavigationItem: React.FC<NavigationItemProps> = ({

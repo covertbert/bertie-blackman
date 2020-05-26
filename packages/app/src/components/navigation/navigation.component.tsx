@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Navigation: React.FC = ({ children }) => (
-  <nav className="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto">
-    <ul className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+  <nav className="hidden top-navbar w-full sm:inline-flex sm:flex-grow sm:w-auto">
+    <ul className="sm:inline-flex sm:flex-row sm:ml-auto sm:w-auto w-full sm:items-center items-start flex flex-col sm:h-auto">
       {children}
     </ul>
   </nav>
