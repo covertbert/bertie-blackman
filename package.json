@@ -11,7 +11,7 @@
     "tsc:app": "tsc -p ./packages/app/tsconfig.json --noEmit",
     "tsc:e2e": "tsc -p ./packages/e2e/tsconfig.json --noEmit",
     "type-check:watch": "yarn tsc:repo --watch",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "cd packages/app && yarn test"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.31.0",
