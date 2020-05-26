@@ -7,8 +7,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        white: '#ffffff',
-        cyan: '#9cdbff',
+        primary: '#E13D59',
+        secondary: '#7FAC66',
       },
       margin: {
         '96': '24rem',
