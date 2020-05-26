@@ -5,8 +5,6 @@ import Header from './header.component'
 
 describe('Header', () => {
   it('renders', () => {
-    const { debug } = render(<Header />)
-
-    debug()
+    render(<Header />)
   })
 })

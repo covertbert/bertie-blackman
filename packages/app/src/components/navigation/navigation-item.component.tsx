@@ -24,20 +24,18 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
   label,
   to,
   external,
-}) => {
-  if (external) {
-    return (
+}) => (
+  <li>
+    {external ? (
       <a href={to} className={linkClasses} target="_blank" rel="noreferrer">
         {label}
       </a>
-    )
-  }
-
-  return (
-    <Link to={to} className={linkClasses}>
-      {label}
-    </Link>
-  )
-}
+    ) : (
+      <Link to={to} className={linkClasses}>
+        {label}
+      </Link>
+    )}
+  </li>
+)
 
 export default NavigationItem
