@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import classnames from 'classnames'
 
 export interface NavigationItemProps {
   label: string
   to: string
   external?: boolean
+  className?: string
 }
 
 const linkClasses = `
@@ -21,12 +23,8 @@ const linkClasses = `
   hover:border-white
 `
 
-const NavigationItem: React.FC<NavigationItemProps> = ({
-  label,
-  to,
-  external,
-}) => (
-  <li className="ml-3">
+const NavigationItem: React.FC<NavigationItemProps> = ({ label, to, external, className }) => (
+  <li className={classnames('text-center', className)}>
     {external ? (
       <a href={to} className={linkClasses} target="_blank" rel="noreferrer">
         {label}
