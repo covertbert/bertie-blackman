@@ -25,6 +25,7 @@ module.exports = {
       files: ['**/*.{test,tests}.{ts,tsx}'], // Feels unnecessary to enforce these rules in tests
       rules: {
         'react/display-name': 0,
+        '@typescript-eslint/no-non-null-assertion': 0,
       },
     },
   ],
