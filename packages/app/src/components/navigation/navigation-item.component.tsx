@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-interface NavigationItemProps {
+export interface NavigationItemProps {
   label: string
   to: string
   external?: boolean

@@ -1,11 +1,13 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import NavigationItem from '../navigation-item.component'
+import NavigationItem, {
+  NavigationItemProps,
+} from '../navigation-item.component'
 
 describe('NavigationItem', () => {
   it('has target when the "external" prop is passed', () => {
-    const props = {
+    const props: NavigationItemProps = {
       to: 'https://the-outside-world.com',
       label: 'Outside',
       external: true,
@@ -20,7 +22,7 @@ describe('NavigationItem', () => {
   })
 
   it('has no target when "external" prop is not passed', () => {
-    const props = {
+    const props: NavigationItemProps = {
       to: '/bed',
       label: 'Bed',
     }

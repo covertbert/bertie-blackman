@@ -1,8 +1,7 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 
-import SEO from '../seo.component'
-import { SEOProps } from '../types'
+import SEO, { SEOProps } from '../seo.component'
 import { getMetaTagContent } from '../../../../test/helpers'
 
 jest.mock('@reach/router', () => ({

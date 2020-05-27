@@ -5,7 +5,7 @@ import { useLocation } from '@reach/router'
 import { useStaticQuery } from 'gatsby'
 import { graphql } from 'gatsby'
 
-import { SEOProps, SiteData } from './types'
+import { SiteData } from './types'
 
 export const query = graphql`
   query SEO {
@@ -21,6 +21,14 @@ export const query = graphql`
     }
   }
 `
+
+export interface SEOProps {
+  title?: string
+  lang?: string
+  description?: string
+  image?: string
+  article?: boolean
+}
 
 const SEO: React.FC<SEOProps> = ({
   title,

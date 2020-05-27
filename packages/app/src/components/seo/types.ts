@@ -1,11 +1,3 @@
-export interface SEOProps {
-  title?: string
-  lang?: string
-  description?: string
-  image?: string
-  article?: boolean
-}
-
 export interface SiteData {
   site: {
     siteMetadata: {
