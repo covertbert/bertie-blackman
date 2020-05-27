@@ -8,15 +8,17 @@ export interface NavigationItemProps {
 }
 
 const linkClasses = `
-  lg:inline-flex 
-  lg:w-auto 
-  w-full 
-  px-3 
-  py-2 
-  text-white 
-  items-center 
-  justify-center 
-  hover:underline
+  lg:inline-flex
+  lg:w-auto
+  w-full
+  px-2
+  py-2
+  text-white
+  items-center
+  justify-center
+  border-b-2
+  border-transparent
+  hover:border-white
 `
 
 const NavigationItem: React.FC<NavigationItemProps> = ({
@@ -24,7 +26,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
   to,
   external,
 }) => (
-  <li>
+  <li className="ml-3">
     {external ? (
       <a href={to} className={linkClasses} target="_blank" rel="noreferrer">
         {label}
