@@ -4,7 +4,10 @@
     <img alt="Netlify" src="https://api.netlify.com/api/v1/badges/2fec8ec7-43dd-499a-8fdb-3e71a482f134/deploy-status" />
   </a>
   <a href="https://github.com/covertbert/bertie-blackman/workflows/Tests/badge.svg" target="_blank">
-    <img alt="CI" src="https://github.com/covertbert/bertie-blackman/workflows/Build%20&%20Test/badge.svg" />
+    <img alt="CI" src="https://github.com/covertbert/bertie-blackman/workflows/Tests/badge.svg" />
+  </a>
+  <a href="https://github.com/covertbert/bertie-blackman/workflows/Cypress/badge.svg" target="_blank">
+    <img alt="CI" src="https://github.com/covertbert/bertie-blackman/workflows/Cypress/badge.svg" />
   </a>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
