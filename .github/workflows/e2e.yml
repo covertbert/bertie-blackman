@@ -24,3 +24,4 @@ jobs:
           working-directory: packages/e2e
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_KEY }}
+          CYPRESS_BASE_URL: https://bertie.dev
