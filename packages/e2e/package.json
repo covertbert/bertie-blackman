@@ -17,6 +17,6 @@
     "url": "https://github.com/covertbert/bertie-blackman/issues"
   },
   "dependencies": {
-    "cypress": "^4.6.0"
+    "cypress": "^4.7.0"
   }
 }
