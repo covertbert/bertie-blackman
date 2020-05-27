@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const toggleButton = () => setIsMobileNavOpen(!isMobileNavOpen)
 
   return (
-    <div className="flex items-center bg-primary p-3 flex-wrap">
+    <header className="flex items-center bg-primary p-3 flex-wrap">
       <Logo />
 
       <MobileButton handleClick={toggleButton} buttonType="open" />
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
         <NavigationItem external to={GITHUB_URL} label="github" className="mb-8" />
         <NavigationItem external to={LINKEDIN_URL} label="linkedin" />
       </MobileNavigation>
-    </div>
+    </header>
   )
 }
 

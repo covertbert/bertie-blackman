@@ -15,8 +15,18 @@ const MobileButton: React.FC<MobileButtonProps> = ({ handleClick, buttonType, cl
     onClick={handleClick}
     className={classnames('sm:hidden inline-flex ml-auto p-3 outline-none', className)}
   >
-    {buttonType === 'open' && <MenuIcon className="w-8 fill-current text-white" />}
-    {buttonType === 'close' && <CloseIcon className="w-8 fill-current text-white" />}
+    {buttonType === 'open' && (
+      <>
+        <span className="invisible absolute">Menu</span>
+        <MenuIcon className="w-8 fill-current text-white" />
+      </>
+    )}
+    {buttonType === 'close' && (
+      <>
+        <span className="invisible absolute">Close</span>
+        <CloseIcon className="w-8 fill-current text-white" />
+      </>
+    )}
   </button>
 )
 
