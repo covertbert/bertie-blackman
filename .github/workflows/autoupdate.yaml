@@ -1,6 +1,8 @@
-name: autoupdate
+name: PR Updater
+
 on:
   push: {}
+
 jobs:
   autoupdate:
     name: autoupdate
