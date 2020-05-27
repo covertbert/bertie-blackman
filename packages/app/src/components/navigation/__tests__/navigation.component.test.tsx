@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import Navigation from './navigation.component'
+import Navigation from '../navigation.component'
 
 describe('Navigation', () => {
   it('renders its children', () => {

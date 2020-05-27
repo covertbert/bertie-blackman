@@ -1,7 +1,7 @@
-import { Navigation, NavigationItem } from './'
+import { Navigation, NavigationItem } from '..'
 
-import NavigationExplicit from './navigation.component'
-import NavigationItemExplicit from './navigation-item.component'
+import NavigationExplicit from '../navigation.component'
+import NavigationItemExplicit from '../navigation-item.component'
 
 describe('Named exports', () => {
   it('are correctly exported', () => {

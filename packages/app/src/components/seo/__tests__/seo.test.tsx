@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 
-import SEO from './seo.component'
-import { SEOProps } from './types'
-import { getMetaTagContent } from '../../../test/helpers'
+import SEO from '../seo.component'
+import { SEOProps } from '../types'
+import { getMetaTagContent } from '../../../../test/helpers'
 
 jest.mock('@reach/router', () => ({
   useLocation: () => ({ pathname: 'mock-pathname' }),
