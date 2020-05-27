@@ -9,11 +9,11 @@ describe('The main page', () => {
 
   it('links to blog', () => {
     cy.get('a').contains('blog').click()
-    cy.get('h1').contains('Blog')
+    cy.get('h1').contains('Blog').should('be.visible')
   })
 
   it('links to work', () => {
     cy.get('a').contains('work').click()
-    cy.get('h1').contains('Work')
+    cy.get('h1').contains('Work').should('be.visible')
   })
 })
