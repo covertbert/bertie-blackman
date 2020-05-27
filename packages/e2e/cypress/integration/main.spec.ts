@@ -4,6 +4,16 @@ describe('The main page', () => {
   })
 
   it('is accessible', () => {
-    cy.get('div').contains('Hello world!')
+    cy.get('h1').contains('software engineer')
+  })
+
+  it('links to blog', () => {
+    cy.get('a').contains('blog').click()
+    cy.get('h1').contains('Blog')
+  })
+
+  it('links to work', () => {
+    cy.get('a').contains('work').click()
+    cy.get('h1').contains('Work')
   })
 })
