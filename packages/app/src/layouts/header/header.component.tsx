@@ -1,7 +1,8 @@
 import React from 'react'
 
-import Logo from '../../components/logo'
 import { Navigation, NavigationItem } from '../../components/navigation'
+import Logo from '../../components/logo'
+import MobileButton from '../../components/navigation/mobile-button.component'
 
 const GITHUB_URL = 'https://github.com/covertbert/'
 const LINKEDIN_URL = 'https://www.linkedin.com/in/bertie-blackman-3654767a/'
@@ -9,6 +10,9 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/bertie-blackman-3654767a/'
 const Header: React.FC = () => (
   <div className="flex items-center bg-primary p-3 flex-wrap">
     <Logo />
+
+    <MobileButton />
+
     <Navigation>
       <NavigationItem to="/work" label="work" />
       <NavigationItem to="/blog" label="blog" />
