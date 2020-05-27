@@ -1,4 +1,4 @@
-name: E2E
+name: Cypress
 
 on:
   push:
@@ -12,10 +12,10 @@ jobs:
       - name: 'Checking out from GitHub'
         uses: 'actions/checkout@v2'
 
-      # - name: Sleep 5 mins
-      #   uses: jakejarvis/wait-action@master
-      #   with:
-      #     time: '5m'
+      - name: Sleep 5 mins
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '5m'
 
       - name: Cypress run
         uses: cypress-io/github-action@v1
