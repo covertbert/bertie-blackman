@@ -9,7 +9,7 @@ jest.mock('@reach/router', () => ({
 }))
 
 describe('SEO', () => {
-  it('renders', async () => {
+  it('renders title and description from props', async () => {
     const props: SEOProps = {
       title: 'Big dog',
       description: 'It is quite a big dog',
