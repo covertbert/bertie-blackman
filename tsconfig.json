@@ -17,5 +17,6 @@
     "strict": true,
     "target": "es5"
   },
+  "typeAcquisition": { "include": ["jest"] },
   "exclude": ["public", ".cache"]
 }

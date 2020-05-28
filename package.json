@@ -14,10 +14,9 @@
     "format": "prettier --write \"**/*.*\"",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js",
     "test": "jest",
-    "tsc:repo": "tsc -p ./packages/app/tsconfig.json --noEmit"
+    "tsc:repo": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "cypress": "^4.7.0",
     "gatsby": "^2.22.12",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.3.2",
@@ -33,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
     "classnames": "^2.2.6",
+    "cypress": "^4.7.0",
     "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-cypress": "^2.11.1",
@@ -49,7 +49,6 @@
     "jest-svg-transformer": "^1.0.0",
     "lint-staged": "^10.2.6",
     "prettier": "2.0.5",
-    "react": "^16.12.0",
     "tailwindcss": "^1.4.6",
     "ts-jest": "^26.0.0",
     "typescript": "^3.9.3"
