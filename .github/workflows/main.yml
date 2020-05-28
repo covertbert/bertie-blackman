@@ -1,7 +1,10 @@
-name: Master
+name: Build & Test
 
 on:
   push:
+    branches:
+      - master
+  pull_request:
     branches:
       - master
 
@@ -17,16 +20,14 @@ jobs:
         id: cache-node-modules
         uses: actions/cache@master
         with:
-          path: packages/app/node_modules
-          key: v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          path: node_modules
+          key: v1-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Yarn install
-        working-directory: packages/app
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn
 
       - name: Gatsby build
-        working-directory: packages/app
         run: yarn build
 
   test:
@@ -40,14 +41,12 @@ jobs:
         id: cache-node-modules
         uses: actions/cache@master
         with:
-          path: |
-            node_modules
-            packages/**/node_modules
-          key: v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          path: node_modules
+          key: v1-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
-      - name: Lerna bootstrap
+      - name: Yarn install
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npx lerna bootstrap
+        run: yarn
 
       - name: Prettier
         run: yarn format
@@ -56,10 +55,7 @@ jobs:
         run: yarn lint
 
       - name: Type check
-        run: |
-          yarn tsc:app
-          yarn tsc:e2e
+        run: yarn tsc:repo
 
       - name: Unit tests
-        working-directory: packages/app
         run: yarn test
