@@ -1,9 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import NavigationItem, {
-  NavigationItemProps,
-} from '../navigation-item.component'
+import NavigationItem, { NavigationItemProps } from '../navigation-item.component'
 
 describe('NavigationItem', () => {
   it('has target when the "external" prop is passed', () => {
