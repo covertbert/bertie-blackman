@@ -15,7 +15,8 @@
     "pretty": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "es5"
   },
+  "typeAcquisition": { "include": ["jest"] },
   "exclude": ["public", ".cache"]
 }

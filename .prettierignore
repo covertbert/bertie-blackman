@@ -1,3 +1,10 @@
 .cache
 package-lock.json
 public
+src/assets/*
+/static/*
+.DS_Store
+.gitignore
+.prettierignore
+.editorconfig
+yarn.lock

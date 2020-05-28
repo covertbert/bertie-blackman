@@ -1,7 +1,7 @@
 const getMetaTagContent = (name: string) => {
-  const matchingTags = Object.values(
-    document.getElementsByTagName('meta'),
-  ).filter(tag => tag.name === name)
+  const matchingTags = Object.values(document.getElementsByTagName('meta')).filter(
+    tag => tag.name === name,
+  )
 
   if (matchingTags.length > 1) {
     throw new Error('There is more than one meta tag with the given input name')
