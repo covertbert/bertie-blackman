@@ -19,13 +19,12 @@
 ## Install
 
 ```sh
-lerna bootstrap
+yarn
 ```
 
 ## Usage
 
 ```sh
-cd packages/app
 yarn start
 ```
 
