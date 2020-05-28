@@ -1,5 +1,6 @@
 name: Cypress
 
+# TODO trigger from netlify deploy success
 on:
   push:
     branches:
