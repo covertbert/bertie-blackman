@@ -39,6 +39,7 @@ const App = () => (
               <input
                 className="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="name"
+                name="name"
                 type="text"
                 placeholder="name"
               />
@@ -54,11 +55,13 @@ const App = () => (
               <input
                 className="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="email"
+                name="email"
                 type="text"
                 placeholder="email"
               />
             </div>
           </div>
+
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
@@ -70,10 +73,12 @@ const App = () => (
               <textarea
                 className="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="message"
+                name="message"
                 placeholder="message"
               />
             </div>
           </div>
+
           <div className="flex items-center justify-between">
             <button
               className="bg-blue-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
