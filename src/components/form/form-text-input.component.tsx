@@ -2,7 +2,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-interface FormTextInputProps {
+export interface FormTextInputProps {
   label: string
   width?: 'full' | 'half'
   className?: string
