@@ -8,7 +8,7 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/bertie-blackman-3654767a/'
 const Footer: React.FC = () => {
   return (
     <footer className="flex items-center bg-primary p-3 flex-wrap">
-      <small className="text-white">&copy; Copyright {new Date().getFullYear()}</small>
+      <small className="text-white">&copy; copyright {new Date().getFullYear()}</small>
 
       <Navigation>
         <NavigationItem to="/work" label="work" />
