@@ -4,6 +4,8 @@ import Header from '../layouts/header'
 import SEO from '../components/seo'
 import Hero from '../components/hero'
 import CTA from '../components/cta'
+import Main from '../layouts/main'
+import Footer from '../layouts/footer'
 
 const HERO_TEXT = 'software engineer'
 const HERO_BODY =
@@ -17,6 +19,10 @@ const App = () => (
     <Hero heading={HERO_TEXT} body={HERO_BODY}>
       <CTA text="contact me" className="mt-8 ml-0" />
     </Hero>
+
+    <Main>Hello</Main>
+
+    <Footer />
   </>
 )
 
