@@ -8,7 +8,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ children, title, background }) => (
   <section className={classnames('flex flex-col p-10', `bg-${background}`)}>
-    {title && <h2>{title}</h2>}
+    {title && <h2 className="mb-4">{title}</h2>}
     {children}
   </section>
 )
