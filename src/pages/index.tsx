@@ -24,7 +24,7 @@ const App = () => (
     </Hero>
 
     <main>
-      <Section background="white">
+      <Section background="secondary" title="Contact me">
         <Form>
           <FormRow>
             <FormTextInput label="name" width="half" />

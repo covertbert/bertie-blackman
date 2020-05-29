@@ -7,6 +7,7 @@ body {
 h1,
 h2 {
   @apply font-display;
+  @apply text-primary;
 }
 
 h1 {
@@ -15,6 +16,11 @@ h1 {
 
 h2 {
   @apply text-5xl;
+}
+
+input,
+textarea {
+  @apply font-display;
 }
 
 @tailwind components;
