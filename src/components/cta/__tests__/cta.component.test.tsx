@@ -7,6 +7,7 @@ describe('CTA', () => {
   it('renders the correct text from props', () => {
     const props: CTAProps = {
       text: 'A button',
+      handleClick: () => jest.fn(),
     }
 
     const { getByText } = render(<CTA {...props} />)
