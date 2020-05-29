@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     'no-console': 1,
     'prefer-template': 1,
+    'arrow-body-style': ['error', 'as-needed'],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-unused-vars': 0,
     'react/prop-types': 0,
