@@ -14,6 +14,7 @@ const MobileButton: React.FC<MobileButtonProps> = ({ handleClick, buttonType, cl
   <button
     onClick={handleClick}
     className={classnames('sm:hidden inline-flex ml-auto p-3 outline-none', className)}
+    aria-label="Menu button"
   >
     {buttonType === 'open' && (
       <>

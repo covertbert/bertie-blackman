@@ -1,15 +1,15 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import CTA, { CTAProps } from '../cta.component'
+import Button, { ButtonProps } from '../button.component'
 
-describe('CTA', () => {
+describe('Button', () => {
   it('renders the correct text from props', () => {
-    const props: CTAProps = {
+    const props: ButtonProps = {
       text: 'A button',
     }
 
-    const { getByText } = render(<CTA {...props} />)
+    const { getByText } = render(<Button {...props} />)
 
     expect(getByText(props.text)).toBeTruthy()
   })
