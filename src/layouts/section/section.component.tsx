@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-interface SectionProps {
+export interface SectionProps {
   title?: string
   background: 'primary' | 'secondary' | 'white'
 }
