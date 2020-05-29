@@ -27,8 +27,8 @@ const App = () => (
       <Section background="white">
         <Form>
           <FormRow>
-            <FormTextInput label="name" />
-            <FormTextInput label="email" />
+            <FormTextInput label="name" width="half" />
+            <FormTextInput label="email" width="half" />
           </FormRow>
 
           <FormRow>
