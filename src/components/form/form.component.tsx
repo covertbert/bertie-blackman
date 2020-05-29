@@ -8,6 +8,7 @@ const Form: React.FC = ({ children }) => (
     netlify-honeypot="bot-field"
     data-netlify="true"
   >
+    <input type="hidden" name="bot-field" />
     {children}
   </form>
 )
