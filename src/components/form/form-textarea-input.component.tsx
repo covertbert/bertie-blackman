@@ -7,14 +7,12 @@ interface FormTextareaInputProps {
 
 const FormTextareaInput: React.FC<FormTextareaInputProps> = ({ label }) => (
   <div className="w-full px-3">
-    <label className="invisible" htmlFor={label}>
-      {label}
-    </label>
     <textarea
       className="appearance-none w-full py-4 px-4 border-2 border-primary text-primary placeholder-primary leading-tight leading-tight focus:outline-none text-lg"
       id={label}
       name={label}
       placeholder={label}
+      aria-label={label}
     />
   </div>
 )

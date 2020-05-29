@@ -9,15 +9,13 @@ interface FormTextInputProps {
 
 const FormTextInput: React.FC<FormTextInputProps> = ({ label, width = 'full' }) => (
   <div className={classnames('w-full px-3 md:mb-0', width === 'full' ? 'w-full' : 'md:w-1/2')}>
-    <label className="invisible" htmlFor={label}>
-      {label}
-    </label>
     <input
       className="appearance-none w-full py-4 px-4 border-2 border-primary text-primary placeholder-primary leading-tight focus:outline-none text-lg"
       id={label}
       name={label}
       type="text"
       placeholder={label}
+      aria-label={label}
     />
   </div>
 )
