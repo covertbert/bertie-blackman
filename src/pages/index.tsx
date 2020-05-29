@@ -2,11 +2,13 @@
 import React from 'react'
 
 import Header from '../layouts/header'
+import Section from '../layouts/section'
+import Footer from '../layouts/footer'
+
 import SEO from '../components/seo'
 import Hero from '../components/hero'
 import CTA from '../components/cta'
-import Section from '../layouts/section'
-import Footer from '../layouts/footer'
+import { Form } from '../components/form'
 
 const HERO_TEXT = 'software engineer'
 const HERO_BODY =
@@ -23,13 +25,7 @@ const App = () => (
 
     <main>
       <Section background="white">
-        <form
-          name="contact"
-          className="w-full max-w-2xl"
-          method="post"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-        >
+        <Form>
           <input type="hidden" name="bot-field" />
 
           <div className="flex flex-wrap -mx-3 mb-4">
@@ -81,12 +77,12 @@ const App = () => (
           <div className="flex items-center justify-between">
             <button
               className="bg-blue-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-              type="button"
+              type="submit"
             >
               Submit
             </button>
           </div>
-        </form>
+        </Form>
       </Section>
     </main>
 
