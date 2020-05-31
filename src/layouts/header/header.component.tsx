@@ -4,8 +4,7 @@ import { Navigation, MobileNavigation, NavigationItem } from '../../components/n
 import Logo from '../../components/logo'
 import MobileButton from '../../components/navigation/mobile-button.component'
 
-const GITHUB_URL = 'https://github.com/covertbert/'
-const LINKEDIN_URL = 'https://www.linkedin.com/in/bertie-blackman-3654767a/'
+import { navigationItems } from '../../constants'
 
 const Header: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
@@ -18,17 +17,27 @@ const Header: React.FC = () => {
       <MobileButton handleClick={toggleButton} buttonType="open" />
 
       <Navigation>
-        <NavigationItem to="/work" label="work" />
-        <NavigationItem to="/blog" label="blog" className="ml-3" />
-        <NavigationItem external to={GITHUB_URL} label="github" className="ml-3" />
-        <NavigationItem external to={LINKEDIN_URL} label="linkedin" className="ml-3" />
+        {navigationItems.map((navigationItem, index) => (
+          <NavigationItem
+            to={navigationItem.to}
+            label={navigationItem.label}
+            key={navigationItem.label}
+            external={navigationItem.external}
+            className={index > 0 ? 'ml-3' : undefined}
+          />
+        ))}
       </Navigation>
 
       <MobileNavigation isVisible={isMobileNavOpen} handleCloseButtonClick={toggleButton}>
-        <NavigationItem to="/work" label="work" className="mb-8" />
-        <NavigationItem to="/blog" label="blog" className="mb-8" />
-        <NavigationItem external to={GITHUB_URL} label="github" className="mb-8" />
-        <NavigationItem external to={LINKEDIN_URL} label="linkedin" />
+        {navigationItems.map((navigationItem, index) => (
+          <NavigationItem
+            to={navigationItem.to}
+            label={navigationItem.label}
+            key={navigationItem.label}
+            external={navigationItem.external}
+            className={index < 3 ? 'mb-8' : undefined}
+          />
+        ))}
       </MobileNavigation>
     </header>
   )
