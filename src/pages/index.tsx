@@ -52,12 +52,12 @@ const App = () => {
 
           <Form>
             <FormRow>
-              <FormTextInput label="name" width="half" className="mb-4 md:mb-0" />
-              <FormTextInput label="email" width="half" />
+              <FormTextInput required label="name" width="half" className="mb-4 md:mb-0" />
+              <FormTextInput required label="email" width="half" />
             </FormRow>
 
             <FormRow>
-              <FormTextAreaInput label="message" />
+              <FormTextAreaInput required label="message" />
             </FormRow>
 
             <FormSubmit text="Submit" />
