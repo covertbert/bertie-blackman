@@ -9,12 +9,16 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   {
+    to: '/',
+    label: 'home',
+  },
+  {
     to: '/work',
     label: 'work',
   },
   {
-    to: '/blog',
-    label: 'blog',
+    to: '/articles',
+    label: 'articles',
   },
   {
     to: GITHUB_URL,
