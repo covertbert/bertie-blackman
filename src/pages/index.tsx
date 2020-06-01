@@ -15,7 +15,7 @@ import { scrollToRef } from '../utils'
 
 const HERO_TEXT = 'software engineer'
 const HERO_BODY =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  "Hi, I'm Bertie and I'm a software engineer passionate about TypeScript, React & CI/CD. Currently I'm working at a company called cinch in Manchester - taking the faff out of buying and selling cars!"
 
 const App = () => {
   const contactForm = useRef(null)
@@ -33,9 +33,8 @@ const App = () => {
       <main>
         <Section background="white" title="About me">
           <p className="mb-6">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry standard dummy text ever since the 1500s, when an unknown printer
-            took a galley of type and scrambled it to make a type specimen book.
+            I have 5 years professional experience in front-end development for both agency and
+            in-house environments.
           </p>
 
           <p>
