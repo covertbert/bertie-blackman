@@ -31,7 +31,7 @@ const App = () => {
       </Hero>
 
       <main>
-        <Section background="secondary" title="About me">
+        <Section background="white" title="About me">
           <p className="mb-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
             has been the industry standard dummy text ever since the 1500s, when an unknown printer
@@ -47,7 +47,7 @@ const App = () => {
 
         <HR />
 
-        <Section background="secondary" title="Contact">
+        <Section background="white" title="Contact">
           <div className="invisible" ref={contactForm} />
 
           <Form>

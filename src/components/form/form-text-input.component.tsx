@@ -17,7 +17,7 @@ const FormTextInput: React.FC<FormTextInputProps> = ({
 }) => (
   <div className={classnames('w-full px-3', width === 'full' ? 'w-full' : 'md:w-1/2', className)}>
     <input
-      className="appearance-none w-full py-4 px-4 border-2 border-primary text-primary placeholder-primary leading-tight focus:outline-none text-lg"
+      className="appearance-none w-full py-4 px-4 border-2 border-accent text-accent placeholder-accent leading-tight focus:outline-none text-lg"
       id={label}
       name={label}
       type="text"

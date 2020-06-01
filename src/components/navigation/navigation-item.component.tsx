@@ -15,12 +15,12 @@ const linkClasses = `
   w-full
   px-2
   py-2
-  text-white
+  text-accent
   items-center
   justify-center
   border-b-2
   border-transparent
-  hover:border-white
+  hover:border-accent
 `
 
 const NavigationItem: React.FC<NavigationItemProps> = ({ label, to, external, className }) => (

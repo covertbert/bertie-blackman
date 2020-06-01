@@ -19,13 +19,13 @@ const MobileButton: React.FC<MobileButtonProps> = ({ handleClick, buttonType, cl
     {buttonType === 'open' && (
       <>
         <span className="invisible absolute">Menu</span>
-        <MenuIcon className="w-8 fill-current text-white" />
+        <MenuIcon className="w-8 fill-current text-accent" />
       </>
     )}
     {buttonType === 'close' && (
       <>
         <span className="invisible absolute">Close</span>
-        <CloseIcon className="w-8 fill-current text-white" />
+        <CloseIcon className="w-8 fill-current text-accent" />
       </>
     )}
   </button>

@@ -35,7 +35,7 @@ const Header: React.FC = () => {
             label={navigationItem.label}
             key={navigationItem.label}
             external={navigationItem.external}
-            className={index < 3 ? 'mb-8' : undefined}
+            className={index + 1 < navigationItems.length ? 'mb-8' : undefined}
           />
         ))}
       </MobileNavigation>

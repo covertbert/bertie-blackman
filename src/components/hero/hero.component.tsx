@@ -9,9 +9,9 @@ export interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ heading, body, children }) => (
   <Section background="primary">
-    <h1 className="text-white leading-tight">{heading}</h1>
+    <h1 className="leading-tight">{heading}</h1>
 
-    <div className="max-w-3xl">{body && <p className="text-white text-lg">{body}</p>}</div>
+    <div className="max-w-3xl">{body && <p className="text-accent text-lg">{body}</p>}</div>
 
     {children}
   </Section>

@@ -7,7 +7,7 @@ body {
 h1,
 h2 {
   @apply font-display;
-  @apply text-primary;
+  @apply text-accent;
 }
 
 h1 {

@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 export interface SectionProps {
   title?: string
-  background: 'primary' | 'secondary'
+  background: 'primary' | 'white'
 }
 
 const Section: React.FC<SectionProps> = ({ children, title, background }) => (

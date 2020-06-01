@@ -7,7 +7,9 @@ export interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ text, className }) => (
-  <button className={classnames('bg-accent text-white text-xl p-2 w-32 font-display', className)}>
+  <button
+    className={classnames('bg-secondary text-accent text-xl p-2 w-32 font-display', className)}
+  >
     {text}
   </button>
 )
