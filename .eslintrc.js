@@ -16,16 +16,16 @@ module.exports = {
     'prefer-template': 1,
     'arrow-body-style': ['error', 'as-needed'],
     '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/no-unused-vars': 0,
     'react/prop-types': 0,
     'react/self-closing-comp': 1,
   },
   overrides: [
     {
-      files: ['**/*.{test,tests}.{ts,tsx}'],
+      files: ['**/*.{test,tests}.{ts,tsx}', '__mocks__/**'],
       rules: {
-        'react/display-name': 0,
         '@typescript-eslint/no-non-null-assertion': 0,
+        '@typescript-eslint/no-unused-vars': 0,
+        'react/display-name': 0,
       },
     },
   ],
