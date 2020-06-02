@@ -23,5 +23,9 @@ textarea {
   @apply font-display;
 }
 
+p {
+  @apply text-lg;
+}
+
 @tailwind components;
 @tailwind utilities;
