@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Header from '../layouts/header'
-import SEO from '../components/seo'
+import Page from '../layouts/page'
+import Section from '../layouts/section'
 
 const App = () => (
-  <>
-    <SEO title="blog" />
-    <Header />
-    <h1>Blog</h1>
-  </>
+  <Page title="articles">
+    <Section>
+      <h1>Articles</h1>
+    </Section>
+  </Page>
 )
 
 export default App

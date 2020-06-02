@@ -1,10 +1,8 @@
 import React, { useRef } from 'react'
 
-import Header from '../layouts/header'
+import Page from '../layouts/page'
 import Section from '../layouts/section'
-import Footer from '../layouts/footer'
 
-import SEO from '../components/seo'
 import Hero from '../components/hero'
 import CTA from '../components/cta'
 import HR from '../components/hr'
@@ -22,16 +20,13 @@ const App = () => {
   const executeScroll = () => scrollToRef<HTMLDivElement>(contactForm)
 
   return (
-    <>
-      <SEO title="home" />
-
-      <Header />
+    <Page title="home">
       <Hero heading={HERO_TEXT} body={HERO_BODY}>
         <CTA text="contact me" className="mt-8 ml-0" handleClick={executeScroll} />
       </Hero>
 
       <main>
-        <Section background="white" title="About me">
+        <Section title="About me">
           <p className="mb-6">
             I have 5 years professional experience in front-end development for both agency and
             in-house environments.
@@ -63,9 +58,7 @@ const App = () => {
           </Form>
         </Section>
       </main>
-
-      <Footer />
-    </>
+    </Page>
   )
 }
 
