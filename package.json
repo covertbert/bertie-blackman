@@ -15,7 +15,7 @@
     "tsc:repo": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "gatsby": "^2.22.16",
+    "gatsby": "^2.22.17",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.3.3",
     "react": "^16.12.0",
