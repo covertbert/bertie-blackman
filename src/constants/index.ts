@@ -1,4 +1,4 @@
 import navigationItems from './navigation'
-import employerData, { EmployerData } from './employer-data'
+import employerData from './employer-data'
 
-export { navigationItems, employerData, EmployerData }
+export { navigationItems, employerData }

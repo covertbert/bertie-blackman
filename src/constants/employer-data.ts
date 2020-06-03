@@ -5,14 +5,14 @@ import SainsburysLogo from '../assets/logos/sainsburys.svg'
 import HavasLogo from '../assets/logos/havas.svg'
 
 export interface EmployerData {
-  Logo: React.FC<SVGAttributes<SVGElement>>
+  logo: React.FC<SVGAttributes<SVGElement>>
   dates: { from: string; to: string }
   description: string
 }
 
 const employerData: EmployerData[] = [
   {
-    Logo: CinchLogo,
+    logo: CinchLogo,
     dates: {
       from: 'March 2020',
       to: 'Current',
@@ -26,7 +26,7 @@ const employerData: EmployerData[] = [
     `,
   },
   {
-    Logo: SainsburysLogo,
+    logo: SainsburysLogo,
     dates: {
       from: 'May 2018',
       to: 'March 2020',
@@ -40,7 +40,7 @@ const employerData: EmployerData[] = [
     `,
   },
   {
-    Logo: HavasLogo,
+    logo: HavasLogo,
     dates: {
       from: 'March 2015',
       to: 'May 2018',

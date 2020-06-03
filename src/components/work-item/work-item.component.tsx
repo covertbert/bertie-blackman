@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { SVGAttributes } from 'react'
 
 import Section from '../../layouts/section'
 
 import HR from '../../components/hr'
 
-import { EmployerData } from '../../constants'
-
-interface WorkItemProps extends EmployerData {
+interface WorkItemProps {
+  Logo: React.FC<SVGAttributes<SVGElement>>
+  dates: { from: string; to: string }
+  description: string
   hasHR?: boolean
 }
 

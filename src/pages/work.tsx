@@ -17,7 +17,7 @@ const App = () => (
     {employerData.map((employer, index) => (
       <WorkItem
         key={employer.description}
-        Logo={employer.Logo}
+        Logo={employer.logo}
         description={employer.description}
         dates={employer.dates}
         hasHR={index + 1 < employerData.length}

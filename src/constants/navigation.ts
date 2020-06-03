@@ -17,10 +17,6 @@ const navigationItems: NavigationItem[] = [
     label: 'work',
   },
   {
-    to: '/articles',
-    label: 'articles',
-  },
-  {
     to: GITHUB_URL,
     label: 'github',
     external: true,
