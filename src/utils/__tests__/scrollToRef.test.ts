@@ -8,4 +8,13 @@ describe('scrollToRef', () => {
 
     expect(() => scrollToRef(mockRef)).toThrow()
   })
+
+  it('calls window.scrollTo with the given offset', () => {
+    const mockRef = { current: { offsetTop: 100 } } as MutableRefObject<HTMLElement>
+    window.scrollTo = jest.fn()
+
+    scrollToRef(mockRef)
+
+    expect(window.scrollTo).toBeCalledWith(0, mockRef.current.offsetTop)
+  })
 })
