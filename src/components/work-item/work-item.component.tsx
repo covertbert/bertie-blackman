@@ -4,7 +4,7 @@ import Section from '../../layouts/section'
 
 import HR from '../../components/hr'
 
-interface WorkItemProps {
+export interface WorkItemProps {
   Logo: React.FC<SVGAttributes<SVGElement>>
   dates: { from: string; to: string }
   description: string

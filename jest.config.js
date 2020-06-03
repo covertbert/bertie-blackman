@@ -5,5 +5,5 @@ module.exports = {
   transform: {
     '^.+\\.svg$': 'jest-svg-transformer',
   },
-  coveragePathIgnorePatterns: ['/node_modules/', './test'],
+  coveragePathIgnorePatterns: ['/node_modules/', './test', '/assets/'],
 }

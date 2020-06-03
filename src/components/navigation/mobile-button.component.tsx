@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import MenuIcon from '../../assets/icons/menu.svg'
 import CloseIcon from '../../assets/icons/close.svg'
 
-interface MobileButtonProps {
+export interface MobileButtonProps {
   handleClick: () => void
   buttonType: 'open' | 'close'
   className?: string
