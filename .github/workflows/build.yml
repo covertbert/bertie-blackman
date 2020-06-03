@@ -101,5 +101,4 @@ jobs:
           minAccessibilityScore: '100'
           minBestPracticesScore: '100'
           minPerformanceScore: '100'
-          minProgressiveWebAppScore: '100'
           minSeoScore: '100'
