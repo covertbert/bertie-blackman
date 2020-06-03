@@ -29,8 +29,8 @@ const App = () => {
         <Section title="About me">
           <div className="max-w-3xl">
             <p className="mb-6">
-              I have 5 years professional experience in front-end development for both agency and
-              in-house environments.
+              I have 5 years professional experience in front-end web development and have worked in
+              both agency and in-house environments.
             </p>
 
             <p>
