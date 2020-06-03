@@ -2,7 +2,7 @@ import React from 'react'
 
 import MobileButton from './mobile-button.component'
 
-interface MobileNavigationProps {
+export interface MobileNavigationProps {
   isVisible: boolean
   handleCloseButtonClick: () => void
 }
