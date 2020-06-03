@@ -13,7 +13,16 @@ jobs:
       - name: 'Checking out from GitHub'
         uses: 'actions/checkout@v2'
 
-      - uses: ./.github/actions/dependencies
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@master
+        with:
+          path: node_modules
+          key: v1-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Yarn install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn
 
       - name: Prettier
         run: yarn format
@@ -73,3 +82,24 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+  lighthouse-check:
+    runs-on: ubuntu-16.04
+    needs:
+      - deploy
+
+    steps:
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        id: lighthouseCheck
+        with:
+          urls: 'https://bertie.dev'
+      - name: Handle Lighthouse Check results
+        uses: foo-software/lighthouse-check-status-action@master
+        with:
+          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          minAccessibilityScore: '100'
+          minBestPracticesScore: '100'
+          minPerformanceScore: '100'
+          minProgressiveWebAppScore: '100'
+          minSeoScore: '100'
