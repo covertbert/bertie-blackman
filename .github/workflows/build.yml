@@ -1,35 +1,11 @@
-name: Build & Test
+name: Build
 
 on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
-  build:
-    runs-on: ubuntu-16.04
-
-    steps:
-      - name: 'Checking out from GitHub'
-        uses: 'actions/checkout@v2'
-
-      - name: Restore node_modules
-        id: cache-node-modules
-        uses: actions/cache@master
-        with:
-          path: node_modules
-          key: v1-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
-
-      - name: Yarn install
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: yarn
-
-      - name: Gatsby build
-        run: yarn build
-
   test:
     runs-on: ubuntu-16.04
 
@@ -59,3 +35,48 @@ jobs:
 
       - name: Unit tests
         run: yarn test
+
+  build:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - name: 'Checking out from GitHub'
+        uses: 'actions/checkout@v2'
+
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@master
+        with:
+          path: node_modules
+          key: v1-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Yarn install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Gatsby build
+        run: yarn build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public
+
+  deploy:
+    runs-on: ubuntu-16.04
+    needs:
+      - build
+      - test
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: public
+
+      - name: Publish to Netlify
+        uses: netlify/actions/build@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
