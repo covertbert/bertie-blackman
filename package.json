@@ -44,7 +44,6 @@
     "jest": "^26.0.1",
     "jest-svg-transformer": "^1.0.0",
     "lint-staged": "^10.2.8",
-    "netlify-cli": "^2.53.0",
     "prettier": "2.0.5",
     "tailwindcss": "^1.4.6",
     "ts-jest": "^26.1.0",
