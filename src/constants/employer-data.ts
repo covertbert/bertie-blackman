@@ -18,11 +18,10 @@ const employerData: EmployerData[] = [
       to: 'Current',
     },
     description: `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut minim veniam, quis nostrud exercitation ullamco
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      I recently started at cinch which has been a brilliant experience thus far!
+      The fast-paced nature of the work combined with incredibly talented people and
+      a React/TypeScript stack is my dream environment. Looking forward to what the future
+      here has to bring...
     `,
   },
   {
@@ -32,11 +31,11 @@ const employerData: EmployerData[] = [
       to: 'March 2020',
     },
     description: `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      My time at Sainsbury's was an incredible learning experience and really allowed me to grow
+      as a software developer. Managing enterprise development environments as well as complex 
+      sets of business requirements required developing a strong skill set that will serve me for
+      the rest of my career. It also gave me my first foray into TypeScript and GraphQL, both of which
+      I still enjoy using regularly!
     `,
   },
   {
@@ -46,11 +45,9 @@ const employerData: EmployerData[] = [
       to: 'May 2018',
     },
     description: `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Havas Lynx gave me my professional introduction to web development. My time there taught me
+      important skills such as version control and the concept of using build tooling, both of
+      which gave me the foundations on which to become a good developer.
     `,
   },
 ]

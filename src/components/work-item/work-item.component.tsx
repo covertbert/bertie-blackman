@@ -15,7 +15,7 @@ const WorkItem: React.FC<WorkItemProps> = ({ Logo, dates, description, hasHR }) 
   <>
     <Section>
       <div className="max-w-3xl">
-        <Logo className="h-12" />
+        <Logo className="h-8" />
 
         <p className="mt-6 font-bold">
           {dates.from} - {dates.to}

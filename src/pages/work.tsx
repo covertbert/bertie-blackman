@@ -11,7 +11,7 @@ const App = () => (
   <Page title="work">
     <Hero
       heading="work"
-      body="I've spent the last 5 years in the industry working on a variety of products backed by varying tech stacks."
+      body="I've spent the last 5 years in the industry working on a variety of products backed by varying tech stacks, giving me the experience to adapt to any working environment."
     />
 
     {employerData.map((employer, index) => (
