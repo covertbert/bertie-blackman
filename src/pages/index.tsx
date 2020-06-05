@@ -13,7 +13,7 @@ import { scrollToRef } from '../utils'
 
 const HERO_TEXT = 'software engineer'
 const HERO_BODY =
-  "Hi, I'm Bertie and I'm a software engineer passionate about TypeScript, React & CI/CD. Currently I'm working at a company called cinch in Manchester - taking the faff out of buying and selling cars!"
+  "Hi, I'm Bertie and I'm a software engineer passionate about TypeScript, React & CI/CD. Currently I'm working at a company called cinch in Manchester where we're taking the faff out of buying and selling cars!"
 
 const App = () => {
   const contactForm = useRef(null)
@@ -29,14 +29,14 @@ const App = () => {
         <Section title="About me">
           <div className="max-w-3xl">
             <p className="mb-6">
-              I have 5 years professional experience in front-end web development and have worked in
-              both agency and in-house environments.
+              I have 5 years&apos; professional experience in frontend software development where
+              I&apos;ve worked in both agency and in-house environments. As a result of this I have
+              gained a wealth of useful experience over the years!
             </p>
 
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type specimen book.
+              I&apos;m also a keen open source contributor so feel free to get in touch below if you
+              have anything exciting that you&apos;d like to collaborate on!
             </p>
           </div>
         </Section>
