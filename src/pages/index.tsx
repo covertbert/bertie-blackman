@@ -31,7 +31,7 @@ const App = () => {
             <p className="mb-6">
               I have 5 years&apos; professional experience in frontend software development where
               I&apos;ve worked in both agency and in-house environments. As a result of this I have
-              gained a wealth of useful experience over the years!
+              gained a wealth of useful experience over the years.
             </p>
 
             <p>
