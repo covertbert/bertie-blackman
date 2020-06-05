@@ -6,7 +6,7 @@ import MobileButton from '../../components/navigation/mobile-button.component'
 
 import { NavigationItem as NavigationItemType } from '../../types'
 
-interface HeaderProps {
+export interface HeaderProps {
   navigationItems: NavigationItemType[]
 }
 

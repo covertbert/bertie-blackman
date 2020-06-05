@@ -54,11 +54,10 @@ jobs:
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: Yeah
+      - name: Create .env file
         run: |
           echo CONTENTFUL_SPACE_ID=${{secrets.CONTENTFUL_SPACE_ID}} > ./.env.production
           echo CONTENTFUL_ACCESS_TOKEN=${{secrets.CONTENTFUL_ACCESS_TOKEN}} >> ./.env.production
-          cat ./.env.production
 
       - name: Gatsby build
         run: yarn build
