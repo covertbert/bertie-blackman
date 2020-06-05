@@ -2,11 +2,15 @@ import React from 'react'
 
 import { Navigation, NavigationItem } from '../../components/navigation'
 
-import { navigationItems } from '../../constants'
+import { NavigationItem as NavigationItemType } from '../../types'
+
+interface HeaderProps {
+  navigationItems: NavigationItemType[]
+}
 
 const currentYear = new Date().getFullYear()
 
-const Footer: React.FC = () => (
+const Footer: React.FC<HeaderProps> = ({ navigationItems }) => (
   <footer className="flex items-center bg-primary py-5 px-3 flex-wrap">
     <small className="text-accent font-bold">&copy;{currentYear} bertie blackman</small>
 

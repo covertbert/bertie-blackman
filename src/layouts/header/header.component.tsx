@@ -4,9 +4,13 @@ import { Navigation, MobileNavigation, NavigationItem } from '../../components/n
 import Logo from '../../components/logo'
 import MobileButton from '../../components/navigation/mobile-button.component'
 
-import { navigationItems } from '../../constants'
+import { NavigationItem as NavigationItemType } from '../../types'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  navigationItems: NavigationItemType[]
+}
+
+const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
   const toggleButton = () => setIsMobileNavOpen(!isMobileNavOpen)
 

@@ -1,24 +1,45 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Header from '../header'
 import Footer from '../footer'
 
 import SEO from '../../components/seo'
 
+import { PageQuery } from './types'
+
 interface PageProps {
   title: string
 }
 
-const Page: React.FC<PageProps> = ({ children, title }) => (
-  <>
-    <SEO title={title} />
+const Page: React.FC<PageProps> = ({ children, title }) => {
+  const data: PageQuery = useStaticQuery(graphql`
+    query PageQuery {
+      allContentfulNavigation(sort: { fields: order }) {
+        totalCount
+        nodes {
+          order
+          external
+          to
+          label
+        }
+      }
+    }
+  `)
 
-    <Header />
+  const { nodes } = data.allContentfulNavigation
 
-    {children}
+  return (
+    <>
+      <SEO title={title} />
 
-    <Footer />
-  </>
-)
+      <Header navigationItems={nodes} />
+
+      {children}
+
+      <Footer navigationItems={nodes} />
+    </>
+  )
+}
 
 export default Page
