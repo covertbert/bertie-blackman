@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Header from '@layouts/header'
 import Footer from '@layouts/footer'
 import SEO from '@components/seo'
+
 import { NavigationItem } from '@typings'
 
 interface PageQuery {
