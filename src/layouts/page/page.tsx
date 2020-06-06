@@ -18,7 +18,6 @@ const Page: React.FC<PageProps> = ({ children, title }) => {
       allContentfulNavigation(sort: { fields: order }) {
         totalCount
         nodes {
-          order
           external
           to
           label

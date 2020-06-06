@@ -10,12 +10,12 @@ import { WorkItem as WorkItemType } from '@typings'
 interface WorkQuery {
   allContentfulWork: {
     totalCount: number
-    edges: WorkItemType[]
+    nodes: WorkItemType[]
   }
 }
 
-const getWorkItemsFromQuery = ({ allContentfulWork: { edges } }: WorkQuery) =>
-  edges.map(({ node: { employerName, logo, dateFrom, dateTo, description } }) => ({
+const getWorkItemsFromQuery = ({ allContentfulWork: { nodes } }: WorkQuery) =>
+  nodes.map(({ employerName, logo, dateFrom, dateTo, description }) => ({
     description: description.json,
     employerName,
     logo: {
@@ -33,22 +33,20 @@ const App = () => {
     query WorkQuery {
       allContentfulWork(sort: { fields: dateTo, order: DESC }) {
         totalCount
-        edges {
-          node {
-            description {
-              json
+        nodes {
+          dateFrom(formatString: "MMMM YYYY")
+          dateTo(formatString: "MMMM YYYY")
+          description {
+            json
+          }
+          logo {
+            file {
+              url
             }
-            dateTo(formatString: "MMMM YYYY")
-            dateFrom(formatString: "MMMM YYYY")
-            siteUrl
-            logo {
-              file {
-                url
-              }
-              title
-            }
+            title
           }
         }
+        totalCount
       }
     }
   `)
