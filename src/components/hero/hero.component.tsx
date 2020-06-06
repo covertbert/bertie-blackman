@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Section from '../../layouts/section'
+import Section from '@layouts/section'
 
 export interface HeroProps {
   heading: string

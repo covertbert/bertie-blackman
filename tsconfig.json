@@ -15,7 +15,13 @@
     "pretty": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "target": "es5",
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@typings": ["types"]
+    }
   },
   "typeAcquisition": { "include": ["jest"] },
   "exclude": ["public", ".cache"]

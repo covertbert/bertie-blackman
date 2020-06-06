@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
 
-import Page from '../layouts/page'
-import Section from '../layouts/section'
+import Page from '@layouts/page'
+import Section from '@layouts/section'
 
-import Hero from '../components/hero'
-import CTA from '../components/cta'
-import HR from '../components/hr'
+import Hero from '@components/hero'
+import CTA from '@components/cta'
+import HR from '@components/hr'
 
-import { Form, FormRow, FormTextInput, FormTextAreaInput, FormSubmit } from '../components/form'
+import { Form, FormRow, FormTextInput, FormTextAreaInput, FormSubmit } from '@components/form'
 
 import { scrollToRef } from '../utils'
 

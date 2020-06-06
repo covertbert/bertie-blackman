@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Page from '../layouts/page'
+import Page from '@layouts/page'
 
-import Hero from '../components/hero'
-import WorkItem from '../components/work-item'
+import Hero from '@components/hero'
+import WorkItem from '@components/work-item'
 
 import { employerData } from '../constants'
 

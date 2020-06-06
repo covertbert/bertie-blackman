@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Navigation, NavigationItem } from '../../components/navigation'
+import { Navigation, NavigationItem } from '@components/navigation'
 
-import { NavigationItem as NavigationItemType } from '../../types'
+import { NavigationItem as NavigationItemType } from '@typings'
 
 interface HeaderProps {
   navigationItems: NavigationItemType[]

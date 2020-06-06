@@ -1,8 +1,8 @@
 import React, { SVGAttributes } from 'react'
 
-import Section from '../../layouts/section'
+import Section from '@layouts/section'
 
-import HR from '../../components/hr'
+import HR from '@components/hr'
 
 export interface WorkItemProps {
   Logo: React.FC<SVGAttributes<SVGElement>>

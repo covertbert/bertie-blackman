@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Header from '../header'
-import Footer from '../footer'
+import Header from '@layouts/header'
+import Footer from '@layouts/footer'
 
-import SEO from '../../components/seo'
+import SEO from '@components/seo'
 
 import { PageQuery } from './types'
 
@@ -27,17 +27,17 @@ const Page: React.FC<PageProps> = ({ children, title }) => {
     }
   `)
 
-  const { nodes } = data.allContentfulNavigation
+  const navigationItems = data.allContentfulNavigation.nodes
 
   return (
     <>
       <SEO title={title} />
 
-      <Header navigationItems={nodes} />
+      <Header navigationItems={navigationItems} />
 
       {children}
 
-      <Footer navigationItems={nodes} />
+      <Footer navigationItems={navigationItems} />
     </>
   )
 }

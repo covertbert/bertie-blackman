@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import { Navigation, MobileNavigation, NavigationItem } from '../../components/navigation'
-import Logo from '../../components/logo'
-import MobileButton from '../../components/navigation/mobile-button.component'
+import { Navigation, MobileNavigation, NavigationItem } from '@components/navigation'
+import Logo from '@components/logo'
+import MobileButton from '@components/navigation/mobile-button.component'
 
-import { NavigationItem as NavigationItemType } from '../../types'
+import { NavigationItem as NavigationItemType } from '@typings'
 
 export interface HeaderProps {
   navigationItems: NavigationItemType[]

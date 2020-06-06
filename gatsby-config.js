@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path')
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -15,6 +18,16 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-alias-imports',
+      options: {
+        alias: {
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@layouts': path.resolve(__dirname, 'src/layouts'),
+          '@typings': path.resolve(__dirname, 'src/types'),
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {
