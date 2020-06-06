@@ -4,7 +4,12 @@ import { render, fireEvent } from '@testing-library/react'
 import Header, { HeaderProps } from '../header.component'
 
 describe('Header', () => {
-  const props: HeaderProps = { navigationItems: [{ to: '/newfoundland', label: 'newfoundland' }] }
+  const props: HeaderProps = {
+    navigationItems: {
+      totalCount: 100,
+      nodes: [{ to: '/newfoundland', label: 'newfoundland' }],
+    },
+  }
 
   it('opens and closes the mobile nav when the "Menu" button is clicked', () => {
     const { getByText } = render(<Header {...props} />)

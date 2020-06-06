@@ -7,12 +7,17 @@ import MobileButton from '@components/navigation/mobile-button.component'
 import { NavigationItem as NavigationItemType } from '@typings'
 
 export interface HeaderProps {
-  navigationItems: NavigationItemType[]
+  navigationItems: {
+    totalCount: number
+    nodes: NavigationItemType[]
+  }
 }
 
 const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
   const toggleButton = () => setIsMobileNavOpen(!isMobileNavOpen)
+
+  const { nodes, totalCount } = navigationItems
 
   return (
     <header className="flex items-center bg-primary p-3 flex-wrap">
@@ -21,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
       <MobileButton handleClick={toggleButton} buttonType="open" />
 
       <Navigation>
-        {navigationItems.map((navigationItem, index) => (
+        {nodes.map((navigationItem, index) => (
           <NavigationItem
             to={navigationItem.to}
             label={navigationItem.label}
@@ -33,13 +38,13 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
       </Navigation>
 
       <MobileNavigation isVisible={isMobileNavOpen} handleCloseButtonClick={toggleButton}>
-        {navigationItems.map((navigationItem, index) => (
+        {nodes.map((navigationItem, index) => (
           <NavigationItem
             to={navigationItem.to}
             label={navigationItem.label}
             key={navigationItem.label}
             external={navigationItem.external}
-            className={index + 1 < navigationItems.length ? 'mb-8' : undefined}
+            className={index + 1 < totalCount ? 'mb-8' : undefined}
           />
         ))}
       </MobileNavigation>

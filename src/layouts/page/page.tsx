@@ -27,7 +27,7 @@ const Page: React.FC<PageProps> = ({ children, title }) => {
     }
   `)
 
-  const navigationItems = data.allContentfulNavigation.nodes
+  const navigationItems = data.allContentfulNavigation
 
   return (
     <>
