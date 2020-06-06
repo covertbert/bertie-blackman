@@ -10,7 +10,7 @@ const options: Options = {
   },
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
-      <a href={node.data.uri} className="underline text-primary" target="blank" rel="noreferrer">
+      <a href={node.data.uri} className="underline" target="blank" rel="noreferrer">
         {children}
       </a>
     ),
