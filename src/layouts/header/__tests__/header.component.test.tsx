@@ -5,11 +5,20 @@ import Header, { HeaderProps } from '../header.component'
 
 describe('Header', () => {
   const props: HeaderProps = {
-    navigationItems: {
-      totalCount: 100,
-      nodes: [{ to: '/newfoundland', label: 'newfoundland' }],
-    },
+    navigationItemsTotal: 100,
+    navigationItems: [
+      { to: '/newfoundland', label: 'newfoundland' },
+      { to: '/chihuahua', label: 'chihuahua' },
+    ],
   }
+
+  it('displays the navigation items given to it', () => {
+    const { getByText } = render(<Header {...props} />)
+
+    props.navigationItems.forEach(item => {
+      expect(getByText(item.label)).toBeTruthy()
+    })
+  })
 
   it('opens and closes the mobile nav when the "Menu" button is clicked', () => {
     const { getByText } = render(<Header {...props} />)
