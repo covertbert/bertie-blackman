@@ -16,10 +16,10 @@ interface WorkQuery {
 
 const getWorkItemsFromQuery = ({ allContentfulWork: { nodes } }: WorkQuery) =>
   nodes.map(({ employerName, logo, dateFrom, dateTo, description }) => ({
-    employerName,
-    description: description.json,
-    logo: { url: logo.file.url, alt: logo.title },
     dates: { from: dateFrom, to: dateTo },
+    description: description.json,
+    employerName,
+    logo: { alt: logo.title, url: logo.file.url },
   }))
 
 const App = () => {

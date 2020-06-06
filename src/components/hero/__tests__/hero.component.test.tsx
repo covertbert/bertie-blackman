@@ -5,8 +5,8 @@ import Hero, { HeroProps } from '../hero.component'
 
 describe('Hero', () => {
   const props: HeroProps = {
-    heading: 'A heading',
     body: 'A super super super super long description',
+    heading: 'A heading',
   }
 
   it('renders the given heading and description props', () => {

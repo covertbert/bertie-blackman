@@ -6,8 +6,8 @@ import CTA, { CTAProps } from '../cta.component'
 describe('CTA', () => {
   it('renders the correct text from props', () => {
     const props: CTAProps = {
-      text: 'A button',
       handleClick: () => jest.fn(),
+      text: 'A button',
     }
 
     const { getByText } = render(<CTA {...props} />)

@@ -11,8 +11,8 @@ jest.mock('@reach/router', () => ({
 describe('SEO', () => {
   it('renders title and description from props', async () => {
     const props: SEOProps = {
-      title: 'Big dog',
       description: 'It is quite a big dog',
+      title: 'Big dog',
     }
 
     render(<SEO title={props.title} description={props.description} />)

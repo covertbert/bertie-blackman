@@ -6,8 +6,8 @@ import MobileButton, { MobileButtonProps } from '../mobile-button.component'
 describe('MobileButton', () => {
   it('renders an open button when the "open" prop is passed', () => {
     const props: MobileButtonProps = {
-      handleClick: jest.fn(),
       buttonType: 'open',
+      handleClick: jest.fn(),
     }
 
     const { getByText } = render(<MobileButton {...props} />)
@@ -17,8 +17,8 @@ describe('MobileButton', () => {
 
   it('renders a close button when the "close" prop is passed', () => {
     const props: MobileButtonProps = {
-      handleClick: jest.fn(),
       buttonType: 'close',
+      handleClick: jest.fn(),
     }
 
     const { getByText } = render(<MobileButton {...props} />)
@@ -30,8 +30,8 @@ describe('MobileButton', () => {
     const mockClickHandler = jest.fn()
 
     const props: MobileButtonProps = {
-      handleClick: mockClickHandler,
       buttonType: 'open',
+      handleClick: mockClickHandler,
     }
 
     const { getByText } = render(<MobileButton {...props} />)

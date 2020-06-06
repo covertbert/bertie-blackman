@@ -3,33 +3,34 @@ const gatsby = jest.requireActual('gatsby')
 
 module.exports = {
   ...gatsby,
-  graphql: jest.fn(),
-  Link: jest.fn().mockImplementation(
-    // these props are invalid for an `a` tag
-    ({
-      activeClassName,
-      activeStyle,
-      getProps,
-      innerRef,
-      partiallyActive,
-      ref,
-      replace,
-      to,
-      ...rest
-    }) =>
-      React.createElement('a', {
-        ...rest,
-        href: to,
-      }),
-  ),
+  Link: jest
+    .fn()
+    .mockImplementation(
+      ({
+        activeClassName,
+        activeStyle,
+        getProps,
+        innerRef,
+        partiallyActive,
+        ref,
+        replace,
+        to,
+        ...rest
+      }) =>
+        React.createElement('a', {
+          ...rest,
+          href: to,
+        }),
+    ),
   StaticQuery: jest.fn(),
+  graphql: jest.fn(),
   useStaticQuery: () => ({
     site: {
       siteMetadata: {
-        title: 'Mock Site',
-        lang: 'en',
-        titleTemplate: '%s · Mock Land',
         description: 'We all mock here',
+        lang: 'en',
+        title: 'Mock Site',
+        titleTemplate: '%s · Mock Land',
         url: 'https://www.mock.com',
       },
     },

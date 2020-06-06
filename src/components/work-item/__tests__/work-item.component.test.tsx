@@ -8,31 +8,31 @@ describe('WorkItem', () => {
   const descriptionText = 'Dogs and cats'
 
   const props: WorkItemProps = {
-    logo: {
-      alt: 'logo',
-      url: 'logo.com',
-    },
     dates: {
       from: 'Kitten',
       to: 'Dog',
     },
     description: {
-      data: {},
-      nodeType: BLOCKS.DOCUMENT,
       content: [
         {
-          data: {},
           content: [
             {
               data: {},
               marks: [],
-              value: descriptionText,
               nodeType: 'text',
+              value: descriptionText,
             },
           ],
+          data: {},
           nodeType: BLOCKS.PARAGRAPH,
         },
       ],
+      data: {},
+      nodeType: BLOCKS.DOCUMENT,
+    },
+    logo: {
+      alt: 'logo',
+      url: 'logo.com',
     },
   }
 

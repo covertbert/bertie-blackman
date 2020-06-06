@@ -7,9 +7,9 @@ describe('Footer', () => {
   it('displays the navigation items given to it', () => {
     const props: FooterProps = {
       navigationItems: [
-        { to: '/labrador', label: 'labrador' },
-        { to: '/newfoundland', label: 'newfoundland' },
-        { to: '/west-highland', label: 'west highland' },
+        { label: 'labrador', to: '/labrador' },
+        { label: 'newfoundland', to: '/newfoundland' },
+        { label: 'west highland', to: '/west-highland' },
       ],
     }
 

@@ -6,9 +6,9 @@ import NavigationItem, { NavigationItemProps } from '../navigation-item.componen
 describe('NavigationItem', () => {
   it('has target when the "external" prop is passed', () => {
     const props: NavigationItemProps = {
-      to: 'https://the-outside-world.com',
-      label: 'Outside',
       external: true,
+      label: 'Outside',
+      to: 'https://the-outside-world.com',
     }
 
     const { getByText } = render(<NavigationItem {...props} />)
@@ -21,8 +21,8 @@ describe('NavigationItem', () => {
 
   it('has no target when "external" prop is not passed', () => {
     const props: NavigationItemProps = {
-      to: '/bed',
       label: 'Bed',
+      to: '/bed',
     }
 
     const { getByText } = render(<NavigationItem {...props} />)

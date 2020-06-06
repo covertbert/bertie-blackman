@@ -6,20 +6,11 @@ require('dotenv').config({
 })
 
 module.exports = {
-  siteMetadata: {
-    title: 'bertie blackman',
-    lang: 'en',
-    titleTemplate: '%s · bertie blackman',
-    description: 'A portfolio',
-    url: 'https://bertie.dev',
-    image: '/images/snape.jpg',
-  },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
-      resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
           '@components': path.resolve(__dirname, 'src/components'),
@@ -28,32 +19,32 @@ module.exports = {
           '@utils': path.resolve(__dirname, 'src/utils'),
         },
       },
+      resolve: 'gatsby-plugin-alias-imports',
     },
     {
-      resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
         accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+        spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
       },
+      resolve: 'gatsby-source-contentful',
     },
     {
-      resolve: 'gatsby-plugin-purgecss',
       options: {
-        printRejected: false,
         develop: false,
+        printRejected: false,
         tailwind: true,
       },
+      resolve: 'gatsby-plugin-purgecss',
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: [/icons/, /logos/],
         },
       },
+      resolve: 'gatsby-plugin-react-svg',
     },
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
         fonts: [
           {
@@ -64,6 +55,15 @@ module.exports = {
           },
         ],
       },
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
     },
   ],
+  siteMetadata: {
+    description: 'A portfolio',
+    image: '/images/snape.jpg',
+    lang: 'en',
+    title: 'bertie blackman',
+    titleTemplate: '%s · bertie blackman',
+    url: 'https://bertie.dev',
+  },
 }

@@ -44,10 +44,10 @@ const SEO: React.FC<SEOProps> = ({ title, lang, description, image, article = fa
   } = site.siteMetadata
 
   const seo = {
-    title: title || defaultTitle,
-    lang: lang || defaultLang,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
+    lang: lang || defaultLang,
+    title: title || defaultTitle,
     url: `${siteUrl}${pathname}`,
   }
 

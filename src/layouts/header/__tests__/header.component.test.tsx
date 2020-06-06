@@ -5,11 +5,11 @@ import Header, { HeaderProps } from '../header.component'
 
 describe('Header', () => {
   const props: HeaderProps = {
-    navigationItemsTotal: 100,
     navigationItems: [
-      { to: '/newfoundland', label: 'newfoundland' },
-      { to: '/chihuahua', label: 'chihuahua' },
+      { label: 'newfoundland', to: '/newfoundland' },
+      { label: 'chihuahua', to: '/chihuahua' },
     ],
+    navigationItemsTotal: 100,
   }
 
   it('displays the navigation items given to it', () => {

@@ -6,8 +6,8 @@ import Section, { SectionProps } from '../section.component'
 describe('Section', () => {
   it('renders a title when given one', () => {
     const props: SectionProps = {
-      title: 'Wombat',
       background: 'primary',
+      title: 'Wombat',
     }
 
     const { getByText } = render(<Section {...props} />)

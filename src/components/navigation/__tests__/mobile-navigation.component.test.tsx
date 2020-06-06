@@ -6,8 +6,8 @@ import MobileNavigation, { MobileNavigationProps } from '../mobile-navigation.co
 describe('MobileNavigation', () => {
   it('renders no navigation when isVisible is false', () => {
     const props: MobileNavigationProps = {
-      isVisible: false,
       handleCloseButtonClick: jest.fn(),
+      isVisible: false,
     }
 
     const { queryByText } = render(<MobileNavigation {...props} />)
@@ -17,8 +17,8 @@ describe('MobileNavigation', () => {
 
   it('renders the navigation when isVisible is true', () => {
     const props: MobileNavigationProps = {
-      isVisible: true,
       handleCloseButtonClick: jest.fn(),
+      isVisible: true,
     }
 
     const { queryByText } = render(<MobileNavigation {...props} />)
