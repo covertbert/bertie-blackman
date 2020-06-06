@@ -3,10 +3,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import Header from '@layouts/header'
 import Footer from '@layouts/footer'
-
 import SEO from '@components/seo'
+import { NavigationItem } from '@typings'
 
-import { PageQuery } from './types'
+interface PageQuery {
+  allContentfulNavigation: {
+    totalCount: number
+    nodes: NavigationItem[]
+  }
+}
 
 interface PageProps {
   title: string
