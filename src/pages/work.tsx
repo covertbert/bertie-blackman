@@ -6,29 +6,48 @@ import Page from '@layouts/page'
 import Hero from '@components/hero'
 import WorkItem from '@components/work-item'
 
-import { employerData } from '../constants'
 import { WorkQuery } from './types'
 
+const getWorkItemsFromQuery = ({ allContentfulWork: { edges } }: WorkQuery) =>
+  edges.map(({ node: { employerName, logo, dateFrom, dateTo, description } }) => ({
+    description: description.json,
+    employerName,
+    logo: {
+      url: logo.file.url,
+      alt: logo.title,
+    },
+    dates: {
+      from: dateFrom,
+      to: dateTo,
+    },
+  }))
+
 const App = () => {
-  const data: WorkQuery = useStaticQuery(graphql`
+  const data = useStaticQuery<WorkQuery>(graphql`
     query WorkQuery {
-      allContentfulWork {
-        nodes {
-          employerName
-          logo {
-            file {
-              url
+      allContentfulWork(sort: { fields: dateTo, order: DESC }) {
+        totalCount
+        edges {
+          node {
+            description {
+              json
             }
-          }
-          dateTo
-          dateFrom
-          description {
-            description
+            dateTo
+            dateFrom
+            siteUrl
+            logo {
+              file {
+                url
+              }
+              title
+            }
           }
         }
       }
     }
   `)
+
+  const employerData = getWorkItemsFromQuery(data)
 
   return (
     <Page title="work">
@@ -39,11 +58,11 @@ const App = () => {
 
       {employerData.map((employer, index) => (
         <WorkItem
-          key={employer.description}
-          Logo={employer.logo}
+          key={employer.employerName}
+          logo={employer.logo}
           description={employer.description}
           dates={employer.dates}
-          hasHR={index + 1 < employerData.length}
+          hasHR={index + 1 < data.totalCount}
         />
       ))}
     </Page>

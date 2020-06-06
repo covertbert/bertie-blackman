@@ -13,7 +13,7 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ children, title }) => {
-  const data: PageQuery = useStaticQuery(graphql`
+  const data = useStaticQuery<PageQuery>(graphql`
     query PageQuery {
       allContentfulNavigation(sort: { fields: order }) {
         totalCount

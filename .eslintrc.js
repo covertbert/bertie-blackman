@@ -1,6 +1,9 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -11,14 +14,6 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:jsx-a11y/strict',
   ],
-  rules: {
-    'no-console': 1,
-    'prefer-template': 1,
-    'arrow-body-style': ['error', 'as-needed'],
-    '@typescript-eslint/explicit-function-return-type': 0,
-    'react/prop-types': 0,
-    'react/self-closing-comp': 1,
-  },
   overrides: [
     {
       files: ['**/*.{test,tests}.{ts,tsx}', '__mocks__/**'],
@@ -29,21 +24,27 @@ module.exports = {
       },
     },
   ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 2018,
     sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 0,
+    'arrow-body-style': ['error', 'as-needed'],
+    'no-console': 1,
+    'prefer-template': 1,
+    'react/prop-types': 0,
+    'react/self-closing-comp': 1,
+    // 'sort-keys': ['error', 'asc', { caseSensitive: true, minKeys: 2, natural: true }],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 }

@@ -9,7 +9,7 @@ import HR from '@components/hr'
 
 import { Form, FormRow, FormTextInput, FormTextAreaInput, FormSubmit } from '@components/form'
 
-import { scrollToRef } from '../utils'
+import { scrollToRef } from '@utils'
 
 const HERO_TEXT = 'software engineer'
 const HERO_BODY =

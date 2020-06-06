@@ -1,3 +1,4 @@
 import scrollToRef from './scrollToRef'
+import enrich from './enrich'
 
-export { scrollToRef }
+export { scrollToRef, enrich }

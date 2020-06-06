@@ -20,7 +20,8 @@
     "paths": {
       "@components/*": ["components/*"],
       "@layouts/*": ["layouts/*"],
-      "@typings": ["types"]
+      "@typings": ["types"],
+      "@utils": ["utils"]
     }
   },
   "typeAcquisition": { "include": ["jest"] },

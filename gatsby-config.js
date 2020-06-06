@@ -25,6 +25,7 @@ module.exports = {
           '@components': path.resolve(__dirname, 'src/components'),
           '@layouts': path.resolve(__dirname, 'src/layouts'),
           '@typings': path.resolve(__dirname, 'src/types'),
+          '@utils': path.resolve(__dirname, 'src/utils'),
         },
       },
     },

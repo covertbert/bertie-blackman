@@ -1,6 +1,9 @@
+import { WorkItem } from '@typings'
+
 export interface WorkQuery {
+  totalCount: number
   allContentfulWork: {
     totalCount: number
-    // nodes: NavigationItem[]
+    edges: WorkItem[]
   }
 }

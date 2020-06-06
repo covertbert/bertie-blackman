@@ -1,3 +1,4 @@
+import { Document } from '@contentful/rich-text-types'
 export interface NavigationItem {
   to: string
   label: string
@@ -5,15 +6,11 @@ export interface NavigationItem {
 }
 
 export interface WorkItem {
-  employerName: string
-  logo: {
-    file: {
-      url: string
-    }
-  }
-  dateTo?: Date
-  dateFrom: Date
-  description: {
-    content: {}
+  node: {
+    employerName: string
+    logo: { file: { url: string }; title: string }
+    dateTo?: Date
+    dateFrom: Date
+    description: { json: Document }
   }
 }
