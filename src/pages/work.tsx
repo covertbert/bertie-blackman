@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { Document } from '@contentful/rich-text-types'
 
 import Page from '@layouts/page'
 
@@ -11,6 +12,12 @@ interface WorkQuery {
   allContentfulWork: {
     totalCount: number
     nodes: WorkItemType[]
+  }
+  contentfulHero: {
+    heading: string
+    body: {
+      json: Document
+    }
   }
 }
 
@@ -25,6 +32,12 @@ const getWorkItemsFromQuery = ({ allContentfulWork: { nodes } }: WorkQuery) =>
 const App = () => {
   const data = useStaticQuery<WorkQuery>(graphql`
     query WorkQuery {
+      contentfulHero(slug: { eq: "work" }) {
+        heading
+        body {
+          json
+        }
+      }
       allContentfulWork(sort: { fields: dateTo, order: DESC }) {
         totalCount
         nodes {
@@ -50,10 +63,7 @@ const App = () => {
 
   return (
     <Page title="work">
-      <Hero
-        heading="work"
-        body="I've spent the last 5 years in the industry working on a variety of products backed by varying tech stacks, giving me the experience to adapt to any working environment."
-      />
+      <Hero heading={data.contentfulHero.heading} body={data.contentfulHero.body.json} />
 
       {employerData.map((employer, index) => (
         <WorkItem

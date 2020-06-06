@@ -23,8 +23,8 @@ textarea {
   @apply font-display;
 }
 
-p {
-  @apply text-lg;
+p:not(:first-of-type) {
+  @apply mt-4;
 }
 
 @tailwind components;

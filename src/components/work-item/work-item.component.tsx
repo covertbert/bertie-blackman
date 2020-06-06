@@ -21,10 +21,10 @@ export interface WorkItemProps {
 const WorkItem: React.FC<WorkItemProps> = ({ logo, dates, description, hasHR }) => (
   <>
     <Section>
-      <div className="max-w-4xl">
+      <div className="max-w-4xl text-lg">
         <img src={logo.url} alt={logo.alt} className="h-8" />
 
-        <p className="mt-6 font-bold">
+        <p className="mt-6 mb-4 font-bold">
           {dates.from} - {dates.to ? dates.to : 'Current'}
         </p>
 

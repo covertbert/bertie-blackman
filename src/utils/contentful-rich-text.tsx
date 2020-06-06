@@ -14,7 +14,7 @@ const options: Options = {
         {children}
       </a>
     ),
-    [BLOCKS.PARAGRAPH]: (_node, children) => <p className="mt-4">{children}</p>,
+    [BLOCKS.PARAGRAPH]: (_node, children) => <p>{children}</p>,
   },
 }
 
