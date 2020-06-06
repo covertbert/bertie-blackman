@@ -32,8 +32,8 @@ const App = () => {
             description {
               json
             }
-            dateTo
-            dateFrom
+            dateTo(formatString: "MMMM YYYY")
+            dateFrom(formatString: "MMMM YYYY")
             siteUrl
             logo {
               file {
@@ -62,7 +62,7 @@ const App = () => {
           logo={employer.logo}
           description={employer.description}
           dates={employer.dates}
-          hasHR={index + 1 < data.totalCount}
+          hasHR={index + 1 < data.allContentfulWork.totalCount}
         />
       ))}
     </Page>

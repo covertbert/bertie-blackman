@@ -1,4 +1,4 @@
 import scrollToRef from './scrollToRef'
-import enrich from './enrich'
+import convertRichText from './contentful-rich-text'
 
-export { scrollToRef, enrich }
+export { scrollToRef, convertRichText }

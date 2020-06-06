@@ -9,8 +9,8 @@ export interface WorkItem {
   node: {
     employerName: string
     logo: { file: { url: string }; title: string }
-    dateTo?: Date
-    dateFrom: Date
+    dateTo?: string
+    dateFrom: string
     description: { json: Document }
   }
 }

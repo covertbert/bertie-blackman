@@ -27,7 +27,7 @@ const App = () => {
 
       <main>
         <Section title="About me">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <p className="mb-6">
               I have 5 years&apos; professional experience in frontend software development where
               I&apos;ve worked in both agency and in-house environments. As a result of this I have

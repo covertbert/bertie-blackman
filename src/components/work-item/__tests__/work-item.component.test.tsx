@@ -1,24 +1,46 @@
-import React, { SVGAttributes } from 'react'
+import React from 'react'
+import { BLOCKS } from '@contentful/rich-text-types'
 import { render } from '@testing-library/react'
 
 import WorkItem, { WorkItemProps } from '../work-item.component'
 
 describe('WorkItem', () => {
-  const svgText = 'I am an SVG'
+  const descriptionText = 'Dogs and cats'
+
   const props: WorkItemProps = {
-    Logo: () => <svg>{svgText}</svg>,
+    logo: {
+      alt: 'logo',
+      url: 'logo.com',
+    },
     dates: {
       from: 'Kitten',
       to: 'Dog',
     },
-    description: 'Dogs and kittens together',
+    description: {
+      data: {},
+      nodeType: BLOCKS.DOCUMENT,
+      content: [
+        {
+          data: {},
+          content: [
+            {
+              data: {},
+              marks: [],
+              value: descriptionText,
+              nodeType: 'text',
+            },
+          ],
+          nodeType: BLOCKS.PARAGRAPH,
+        },
+      ],
+    },
   }
 
   it('renders the given props correctly', () => {
-    const { getByText } = render(<WorkItem {...props} />)
+    const { getByText, getByAltText } = render(<WorkItem {...props} />)
 
-    expect(getByText(svgText)).toBeTruthy()
-    expect(getByText(props.description)).toBeTruthy()
+    expect(getByAltText(props.logo.alt)).toBeTruthy()
+    expect(getByText(descriptionText)).toBeTruthy()
     expect(getByText(`${props.dates.from} - ${props.dates.to}`)).toBeTruthy()
   })
 

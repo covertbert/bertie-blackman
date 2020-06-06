@@ -3,7 +3,7 @@ import React from 'react'
 const Form: React.FC = ({ children }) => (
   <form
     name="contact"
-    className="w-full max-w-3xl"
+    className="w-full max-w-4xl"
     method="post"
     netlify-honeypot="bot-field"
     data-netlify="true"

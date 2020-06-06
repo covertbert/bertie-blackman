@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import React from 'react'
-import { INLINES, MARKS, Document } from '@contentful/rich-text-types'
+import { INLINES, MARKS, BLOCKS, Document } from '@contentful/rich-text-types'
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 
 const options: Options = {
@@ -14,7 +14,11 @@ const options: Options = {
         {children}
       </a>
     ),
+    [BLOCKS.PARAGRAPH]: (_node, children) => <p className="mt-4">{children}</p>,
   },
 }
 
-export default (richTextDocument: Document) => documentToReactComponents(richTextDocument, options)
+const convertRichText = (richTextDocument: Document) =>
+  documentToReactComponents(richTextDocument, options)
+
+export default convertRichText
