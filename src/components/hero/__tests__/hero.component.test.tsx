@@ -1,11 +1,31 @@
 import React from 'react'
+import { BLOCKS } from '@contentful/rich-text-types'
 import { render } from '@testing-library/react'
 
 import Hero, { HeroProps } from '../hero.component'
 
 describe('Hero', () => {
+  const bodyText = 'I am a teapot'
+
   const props: HeroProps = {
-    body: 'A super super super super long description',
+    body: {
+      content: [
+        {
+          content: [
+            {
+              data: {},
+              marks: [],
+              nodeType: 'text',
+              value: bodyText,
+            },
+          ],
+          data: {},
+          nodeType: BLOCKS.PARAGRAPH,
+        },
+      ],
+      data: {},
+      nodeType: BLOCKS.DOCUMENT,
+    },
     heading: 'A heading',
   }
 
@@ -13,7 +33,7 @@ describe('Hero', () => {
     const { getByText } = render(<Hero {...props} />)
 
     expect(getByText(props.heading)).toBeTruthy()
-    expect(getByText(props.body!)).toBeTruthy()
+    expect(getByText(bodyText)).toBeTruthy()
   })
 
   it('renders the given children', () => {

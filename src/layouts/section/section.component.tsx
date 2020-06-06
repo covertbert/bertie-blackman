@@ -1,6 +1,5 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Document } from '@contentful/rich-text-types'
 
 export interface SectionProps {
   title?: string
