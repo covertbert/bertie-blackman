@@ -5,8 +5,14 @@ import Page from '@layouts/page'
 
 import Hero from '@components/hero'
 import WorkItem from '@components/work-item'
+import { WorkItem as WorkItemType } from '@typings'
 
-import { WorkQuery } from './types'
+interface WorkQuery {
+  allContentfulWork: {
+    totalCount: number
+    edges: WorkItemType[]
+  }
+}
 
 const getWorkItemsFromQuery = ({ allContentfulWork: { edges } }: WorkQuery) =>
   edges.map(({ node: { employerName, logo, dateFrom, dateTo, description } }) => ({
