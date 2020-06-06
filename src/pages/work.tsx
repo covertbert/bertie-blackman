@@ -34,6 +34,7 @@ const App = () => {
       allContentfulWork(sort: { fields: dateTo, order: DESC }) {
         totalCount
         nodes {
+          employerName
           dateFrom(formatString: "MMMM YYYY")
           dateTo(formatString: "MMMM YYYY")
           description {

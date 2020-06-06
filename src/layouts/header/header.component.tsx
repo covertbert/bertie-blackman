@@ -7,17 +7,13 @@ import MobileButton from '@components/navigation/mobile-button.component'
 import { NavigationItem as NavigationItemType } from '@typings'
 
 export interface HeaderProps {
-  navigationItems: {
-    totalCount: number
-    nodes: NavigationItemType[]
-  }
+  navigationItemsTotal: number
+  navigationItems: NavigationItemType[]
 }
 
-const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
+const Header: React.FC<HeaderProps> = ({ navigationItems, navigationItemsTotal }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
   const toggleButton = () => setIsMobileNavOpen(!isMobileNavOpen)
-
-  const { nodes, totalCount } = navigationItems
 
   return (
     <header className="flex items-center bg-primary p-3 flex-wrap">
@@ -26,25 +22,25 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
       <MobileButton handleClick={toggleButton} buttonType="open" />
 
       <Navigation>
-        {nodes.map((navigationItem, index) => (
+        {navigationItems.map((item, index) => (
           <NavigationItem
-            to={navigationItem.to}
-            label={navigationItem.label}
-            key={navigationItem.label}
-            external={navigationItem.external}
+            to={item.to}
+            label={item.label}
+            key={item.label}
+            external={item.external}
             className={index > 0 ? 'ml-3' : undefined}
           />
         ))}
       </Navigation>
 
       <MobileNavigation isVisible={isMobileNavOpen} handleCloseButtonClick={toggleButton}>
-        {nodes.map((navigationItem, index) => (
+        {navigationItems.map((item, index) => (
           <NavigationItem
-            to={navigationItem.to}
-            label={navigationItem.label}
-            key={navigationItem.label}
-            external={navigationItem.external}
-            className={index + 1 < totalCount ? 'mb-8' : undefined}
+            to={item.to}
+            label={item.label}
+            key={item.label}
+            external={item.external}
+            className={index + 1 < navigationItemsTotal ? 'mb-8' : undefined}
           />
         ))}
       </MobileNavigation>

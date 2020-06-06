@@ -32,11 +32,14 @@ const Page: React.FC<PageProps> = ({ children, title }) => {
     <>
       <SEO title={title} />
 
-      <Header navigationItems={navigationItems} />
+      <Header
+        navigationItems={navigationItems.nodes}
+        navigationItemsTotal={navigationItems.totalCount}
+      />
 
       {children}
 
-      <Footer navigationItems={navigationItems} />
+      <Footer navigationItems={navigationItems.nodes} />
     </>
   )
 }
