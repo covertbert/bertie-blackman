@@ -1,14 +1,14 @@
 import React from 'react'
+import { navigate } from 'gatsby'
 
-import Page from '@layouts/page'
-import Section from '@layouts/section'
+setTimeout(() => {
+  navigate('/')
+}, 4000)
 
 const App = () => (
-  <Page title="form success">
-    <Section>
-      <h1>Thank you!</h1>
-    </Section>
-  </Page>
+  <div className="absolute w-full h-full flex justify-center items-center bg-primary">
+    <h1>Nice one!</h1>
+  </div>
 )
 
 export default App
