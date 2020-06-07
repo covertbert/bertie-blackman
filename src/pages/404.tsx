@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 
 setTimeout(() => {
   navigate('/')
-}, 1500)
+}, 2500)
 
 const browser = typeof window !== 'undefined' && window
 
