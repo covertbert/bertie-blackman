@@ -5,9 +5,7 @@
   </a>
 </p>
 
-> My portfolio
-
-Built using Gatsby, TypeScript & GraphQL backed by a Contentful CMS.
+> Built using Gatsby, TypeScript & GraphQL backed by a Contentful CMS.
 
 ## Install
 
