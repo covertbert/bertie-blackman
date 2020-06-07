@@ -24,10 +24,3 @@ yarn start
 ```sh
 yarn test
 ```
-
-## Author
-
-👤 **Bertie Blackman**
-
-- Github: [@covertbert](https://github.com/covertbert)
-- LinkedIn: [@bertie-blackman-3654767a](https://linkedin.com/in/bertie-blackman-3654767a)
