@@ -71,3 +71,5 @@ yarn-error.log
 .yarn-integrity
 
 bin
+
+lighthouse/lighthouse_pwa.svg

@@ -1,0 +1,25 @@
+name: Lighthouse Reports
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - name: 'Checking out from GitHub'
+        uses: 'actions/checkout@v2'
+
+      - name: 'Generate badges'
+        run: npx lighthouse-badges --urls https://bertie.dev -o lighthouse
+
+      - uses: EndBug/add-and-commit@v4
+        name: 'Commit updated badges'
+        with:
+          author_name: Lighthouse
+          author_email: light@house.com
+          message: 'Updates lighthouse badges'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
