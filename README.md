@@ -9,6 +9,15 @@
   <a href="lighthouse/lighthouse_accessibility.svg" target="_blank">
     <img alt="Lighthouse accessibility" src="lighthouse/lighthouse_accessibility.svg" />
   </a>
+  <a href="lighthouse/lighthouse_best-practices.svg" target="_blank">
+    <img alt="Lighthouse best practices" src="lighthouse/lighthouse_best-practices.svg" />
+  </a>
+  <a href="lighthouse/lighthouse_performance.svg" target="_blank">
+    <img alt="Lighthouse performance" src="lighthouse/lighthouse_performance.svg" />
+  </a>
+  <a href="lighthouse/lighthouse_seo.svg" target="_blank">
+    <img alt="Lighthouse SEO" src="lighthouse/lighthouse_seo.svg" />
+  </a>
 </p>
 
 > Built using Gatsby, TypeScript & GraphQL backed by a Contentful CMS.
