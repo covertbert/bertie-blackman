@@ -8,7 +8,7 @@ interface FormSubmitProps {
 
 const FormSubmit: React.FC<FormSubmitProps> = ({ text }) => (
   <div className="flex items-center justify-between">
-    <Button text={text} />
+    <Button text={text} type="submit" />
   </div>
 )
 
