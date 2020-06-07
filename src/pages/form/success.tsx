@@ -3,7 +3,7 @@ import { navigate } from 'gatsby'
 
 setTimeout(() => {
   navigate('/')
-}, 2000)
+}, 1500)
 
 const App = () => (
   <div className="absolute w-full h-full flex justify-center items-center bg-primary">
