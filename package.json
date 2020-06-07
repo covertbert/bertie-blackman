@@ -12,6 +12,7 @@
     "format": "prettier --write \"**/*.*\"",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js",
     "test": "jest",
+    "test:ci": "jest --coverage",
     "tsc:repo": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
