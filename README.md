@@ -4,7 +4,10 @@
     <img alt="Build" src="https://github.com/covertbert/bertie-blackman/workflows/Build/badge.svg" />
   </a>
   <a href="https://codecov.io/gh/covertbert/bertie-blackman" target="_blank">
-    <img alt="Build" src="https://codecov.io/gh/covertbert/bertie-blackman/branch/master/graph/badge.svg" />
+    <img alt="Code coverage" src="https://codecov.io/gh/covertbert/bertie-blackman/branch/master/graph/badge.svg" />
+  </a>  
+  <a href="lighthouse/lighthouse_accessibility.svg" target="_blank">
+    <img alt="Lighthouse accessibility" src="lighthouse/lighthouse_accessibility.svg" />
   </a>
 </p>
 
