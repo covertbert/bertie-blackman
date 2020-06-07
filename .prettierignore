@@ -8,3 +8,6 @@ src/assets/*
 .prettierignore
 .editorconfig
 yarn.lock
+*.svg
+coverage
+.env*
