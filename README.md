@@ -3,6 +3,9 @@
   <a href="https://github.com/covertbert/bertie-blackman/actions?query=workflow%3ABuild" target="_blank">
     <img alt="Build" src="https://github.com/covertbert/bertie-blackman/workflows/Build/badge.svg" />
   </a>
+  <a href="https://codecov.io/gh/covertbert/bertie-blackman" target="_blank">
+    <img alt="Build" src="https://codecov.io/gh/covertbert/bertie-blackman/branch/master/graph/badge.svg" />
+  </a>
 </p>
 
 > Built using Gatsby, TypeScript & GraphQL backed by a Contentful CMS.
