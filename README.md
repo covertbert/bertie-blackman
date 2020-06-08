@@ -5,6 +5,9 @@
   </a>
   <a href="https://codecov.io/gh/covertbert/bertie-blackman" target="_blank">
     <img alt="Code coverage" src="https://codecov.io/gh/covertbert/bertie-blackman/branch/master/graph/badge.svg" />
+  </a>
+  <a href="https://lgtm.com/projects/g/covertbert/bertie-blackman/context:javascript" target="_blank">
+    <img alt="Code quality" src="https://img.shields.io/lgtm/grade/javascript/g/covertbert/bertie-blackman.svg?logo=lgtm&logoWidth=18" />
   </a>  
   <a href="lighthouse/lighthouse_accessibility.svg" target="_blank">
     <img alt="Lighthouse accessibility" src="lighthouse/lighthouse_accessibility.svg" />
