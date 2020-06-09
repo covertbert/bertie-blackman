@@ -1,4 +1,5 @@
-<h1 align="center">Welcome to my portfolio 👋</h1>
+# Welcome to my portfolio 👋
+
 <p>
   <a href="https://github.com/covertbert/bertie-blackman/actions?query=workflow%3ABuild" target="_blank">
     <img alt="Build" src="https://github.com/covertbert/bertie-blackman/workflows/Build/badge.svg" />
