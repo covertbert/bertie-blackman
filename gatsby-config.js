@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 
@@ -21,6 +22,19 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-alias-imports',
     },
+    {
+      options: {
+        background_color: '#6b37bf',
+        display: 'standalone',
+        icon: 'src/assets/app-icon.png', // This path is relative to the root of the site.
+        name: 'bertie.dev',
+        short_name: 'bertie.dev',
+        start_url: '/',
+        theme_color: '#4BC0D9',
+      },
+      resolve: 'gatsby-plugin-manifest',
+    },
+    'gatsby-plugin-offline',
     {
       options: {
         accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
