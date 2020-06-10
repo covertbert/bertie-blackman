@@ -25,6 +25,9 @@
   <a href="lighthouse/lighthouse_seo.svg" target="_blank">
     <img alt="Lighthouse SEO" src="lighthouse/lighthouse_seo.svg" />
   </a>
+  <a href="lighthouse/lighthouse_pwa.svg" target="_blank">
+    <img alt="Lighthouse PWA" src="lighthouse/lighthouse_pwa.svg" />
+  </a>
 </p>
 
 > Built using Gatsby, TypeScript & GraphQL backed by a Contentful CMS.
