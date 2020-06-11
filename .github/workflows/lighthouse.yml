@@ -1,9 +1,6 @@
 name: Lighthouse Reports
 
-on:
-  push:
-    branches:
-      - master
+on: repository_dispatch
 
 jobs:
   lighthouse:
