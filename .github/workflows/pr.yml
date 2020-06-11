@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-16.04
+    name: Gatsby Build
 
     steps:
       - name: 'Checking out from GitHub'
@@ -32,6 +33,7 @@ jobs:
 
   test:
     runs-on: ubuntu-16.04
+    name: Quality Checks
 
     steps:
       - name: 'Checking out from GitHub'
@@ -58,4 +60,6 @@ jobs:
         run: yarn tsc:repo
 
       - name: Unit tests
-        run: yarn test
+        run: |
+          yarn test:ci
+          bash <(curl -s https://codecov.io/bash)
