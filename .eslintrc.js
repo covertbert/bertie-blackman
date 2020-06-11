@@ -23,6 +23,12 @@ module.exports = {
         'react/display-name': 0,
       },
     },
+    {
+      files: ['**/*.{test,tests}.{ts,tsx}', '**/*.tsx', '__mocks__/**'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 0,
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -34,7 +40,6 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 0,
     'arrow-body-style': ['error', 'as-needed'],
     'no-console': 1,
     'prefer-template': 1,
