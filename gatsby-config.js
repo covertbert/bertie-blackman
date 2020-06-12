@@ -71,6 +71,13 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-prefetch-google-fonts',
     },
+    {
+      options: {
+        head: false,
+        trackingId: `${process.env.ANALYTICS_TRACKING_ID}`,
+      },
+      resolve: `gatsby-plugin-google-analytics`,
+    },
   ],
   siteMetadata: {
     description: 'A portfolio',

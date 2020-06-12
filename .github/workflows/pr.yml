@@ -29,6 +29,7 @@ jobs:
         run: |
           echo CONTENTFUL_ACCESS_TOKEN=${{ secrets.CONTENTFUL_ACCESS_TOKEN }} > ./.env.production
           echo CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }} >> ./.env.production
+          echo ANALYTICS_TRACKING_ID=${{ secrets.ANALYTICS_TRACKING_ID }} >> ./.env.production
           yarn build
 
   test:
