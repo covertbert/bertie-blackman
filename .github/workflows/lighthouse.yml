@@ -1,6 +1,8 @@
 name: Lighthouse Reports
 
-on: repository_dispatch
+on:
+  schedule:
+    - cron: '0 1 * * *'
 
 jobs:
   lighthouse:
