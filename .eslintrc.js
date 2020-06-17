@@ -19,7 +19,6 @@ module.exports = {
       files: ['**/*.{test,tests}.{ts,tsx}', '__mocks__/**'],
       rules: {
         '@typescript-eslint/no-non-null-assertion': 0,
-        '@typescript-eslint/no-unused-vars': 0,
         'react/display-name': 0,
       },
     },
