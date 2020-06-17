@@ -81,7 +81,7 @@ module.exports = {
   ],
   siteMetadata: {
     description: 'A portfolio',
-    image: '/images/snape.jpg',
+    image: '/icons/icon-512x512.png',
     lang: 'en',
     title: 'bertie blackman',
     titleTemplate: '%s · bertie blackman',
