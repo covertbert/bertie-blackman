@@ -45,7 +45,7 @@ describe('WorkItem', () => {
   })
 
   it('renders "Current" when given no "to" date', () => {
-    const { getByText, debug } = render(<WorkItem {...props} dates={{ from: 'house' }} />)
+    const { getByText } = render(<WorkItem {...props} dates={{ from: 'house' }} />)
 
     expect(getByText('house - Current')).toBeTruthy()
   })

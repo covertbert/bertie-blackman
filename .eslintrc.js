@@ -16,6 +16,12 @@ module.exports = {
   ],
   overrides: [
     {
+      files: ['__mocks__/**'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 0,
+      },
+    },
+    {
       files: ['**/*.{test,tests}.{ts,tsx}', '__mocks__/**'],
       rules: {
         '@typescript-eslint/no-non-null-assertion': 0,
