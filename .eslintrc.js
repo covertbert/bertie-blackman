@@ -29,7 +29,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.{test,tests}.{ts,tsx}', '**/*.tsx', '__mocks__/**'],
+      files: ['**/*.{test,tests}.{ts,tsx}', '**/*.tsx', '__mocks__/**', 'cypress/**'],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 0,
       },

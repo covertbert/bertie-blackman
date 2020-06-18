@@ -2,3 +2,6 @@
   base = "/"
   publish = "public/"
   command = "yarn ci"
+
+[[plugins]]
+  package = "netlify-plugin-cypress"
