@@ -20,6 +20,6 @@ describe('As a user', () => {
 
     cy.get('@submit').click()
 
-    cy.get('h1').contains('Nice one!').should('be.visible')
+    cy.url().should('include', 'success')
   })
 })
