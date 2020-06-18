@@ -6,10 +6,12 @@
   "scripts": {
     "clean": "gatsby clean",
     "build": "gatsby build",
+    "ci": "yarn lint && yarn prettier:check && yarn test && yarn build",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "start": "yarn develop",
-    "format": "prettier --write \"**/*.*\"",
+    "prettier:check": "prettier --check \"**/*.*\"",
+    "prettier:fix": "prettier --write \"**/*.*\"",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js",
     "test": "jest",
     "test:ci": "jest --coverage",
