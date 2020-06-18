@@ -25,5 +25,6 @@
     }
   },
   "typeAcquisition": { "include": ["jest"] },
+  "include": ["src/**/*"],
   "exclude": ["public", ".cache"]
 }
