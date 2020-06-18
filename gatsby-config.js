@@ -2,9 +2,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 module.exports = {
   plugins: [
