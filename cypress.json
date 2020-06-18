@@ -1,4 +1,5 @@
 {
   "baseUrl": "https://bertie.dev",
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "projectId": "iaip9r"
 }
