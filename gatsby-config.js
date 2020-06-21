@@ -79,12 +79,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
     },
     {
-      options: {
-        headers: {
-          '/*': ['X-Frame-Options: DENY'],
-        },
-      },
-      resolve: 'gatsby-plugin-netlify-headers',
+      resolve: 'gatsby-plugin-netlify',
     },
   ],
   siteMetadata: {
