@@ -8,9 +8,10 @@ export default {
   title: 'Button',
 }
 
-const buttonProps = {
+const buttonProps: ButtonProps = {
+  onClick: action('submit'),
   text: 'Submit',
   type: 'submit',
-} as ButtonProps
+}
 
-export const Submit = () => <Button onClick={action('button-click')} {...buttonProps} />
+export const Submit = () => <Button {...buttonProps} />
