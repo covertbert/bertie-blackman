@@ -5,8 +5,9 @@
   "description": "My portfolio site",
   "scripts": {
     "clean": "gatsby clean",
-    "build": "gatsby build",
-    "ci": "yarn lint && yarn prettier:check && yarn test && yarn build",
+    "build": "export $(egrep -v '^#' .env | xargs) && gatsby build",
+    "build-ci": "gatsby build",
+    "ci": "yarn lint && yarn prettier:check && yarn test && yarn build-ci",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "start": "yarn develop",
