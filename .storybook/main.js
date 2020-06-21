@@ -1,7 +1,17 @@
+const path = require('path')
+
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
   addons: ['@storybook/addon-actions', '@storybook/addon-links'],
   webpackFinal: async config => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@layouts': path.resolve(__dirname, '../src/layouts'),
+      '@utils': path.resolve(__dirname, '../src/utils'),
+      '@typings': path.resolve(__dirname, '../src/types'),
+    }
+    config.resolve.extensions = [...config.resolve.extensions, '.ts', '.tsx', '.css']
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
     // use installed babel-loader which is v8.0-beta (which is meant to work with @babel/core@7)

@@ -54,7 +54,7 @@ const App = () => {
   return (
     <Page title="home">
       <Hero heading={heroHeading} body={heroBody.json}>
-        <CTA text="contact me" className="mt-8 ml-0" handleClick={executeScroll} />
+        <CTA text="contact me" className="mt-8" handleClick={executeScroll} />
       </Hero>
 
       <main>
