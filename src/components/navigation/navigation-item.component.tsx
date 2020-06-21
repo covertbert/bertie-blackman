@@ -23,18 +23,22 @@ const linkClasses = `
   hover:border-accent
 `
 
-const NavigationItem: React.FC<NavigationItemProps> = ({ label, to, external, className }) => (
-  <li className={classnames('text-center', className)}>
-    {external ? (
-      <a href={to} className={linkClasses} target="_blank" rel="noreferrer">
-        {label}
-      </a>
-    ) : (
-      <Link to={to} className={linkClasses}>
-        {label}
-      </Link>
-    )}
-  </li>
-)
+const NavigationItem: React.FC<NavigationItemProps> = ({ label, to, external, className }) => {
+  const formattedLabel = label.toLowerCase()
+
+  return (
+    <li className={classnames('text-center', className)}>
+      {external ? (
+        <a href={to} className={linkClasses} target="_blank" rel="noreferrer">
+          {formattedLabel}
+        </a>
+      ) : (
+        <Link to={to} className={linkClasses}>
+          {formattedLabel}
+        </Link>
+      )}
+    </li>
+  )
+}
 
 export default NavigationItem

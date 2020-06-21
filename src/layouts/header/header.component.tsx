@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Navigation, MobileNavigation, NavigationItem } from '@components/navigation'
 import Logo from '@components/logo'
 import MobileButton from '@components/navigation/mobile-button.component'
+import { Header as HeaderComponent } from '@components/header'
 
 import { NavigationItem as NavigationItemType } from '@typings'
 
@@ -16,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems, navigationItemsTotal }
   const toggleButton = () => setIsMobileNavOpen(!isMobileNavOpen)
 
   return (
-    <header className="flex items-center bg-primary p-3 flex-wrap">
+    <HeaderComponent>
       <Logo />
 
       <MobileButton handleClick={toggleButton} buttonType="open" />
@@ -44,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems, navigationItemsTotal }
           />
         ))}
       </MobileNavigation>
-    </header>
+    </HeaderComponent>
   )
 }
 
