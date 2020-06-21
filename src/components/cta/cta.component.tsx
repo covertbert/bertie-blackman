@@ -1,19 +1,20 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import Button from '@components/button'
+
 export interface CTAProps {
+  handleClick: () => void
   text: string
   className?: string
-  handleClick: () => void
 }
 
-const CTA: React.FC<CTAProps> = ({ text, className, handleClick }) => (
-  <button
-    className={classnames('bg-secondary text-accent text-2xl p-4 m-5 w-40 font-display', className)}
+const CTA: React.FC<CTAProps> = ({ handleClick, text, className }) => (
+  <Button
     onClick={handleClick}
-  >
-    {text}
-  </button>
+    text={text}
+    className={classnames('text-2xl p-4 m-5 w-40', className)}
+  />
 )
 
 export default CTA

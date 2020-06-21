@@ -1,9 +1,10 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
+
 import Button, { ButtonProps } from './button.component'
 
 export default {
   component: Button,
-  excludeStories: /.*Props$/,
   title: 'Button',
 }
 
@@ -12,4 +13,4 @@ const buttonProps = {
   type: 'submit',
 } as ButtonProps
 
-export const Submit = () => <Button {...buttonProps} />
+export const Submit = () => <Button onClick={action('button-click')} {...buttonProps} />
