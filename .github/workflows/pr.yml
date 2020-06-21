@@ -32,6 +32,28 @@ jobs:
           ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
         run: yarn build
 
+  storybook:
+    runs-on: ubuntu-16.04
+    name: Storybook Build
+
+    steps:
+      - name: 'Checking out from GitHub'
+        uses: 'actions/checkout@v2'
+
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@master
+        with:
+          path: node_modules
+          key: v1-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Yarn install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Storybook build
+        run: yarn build-storybook
+
   test:
     runs-on: ubuntu-16.04
     name: Quality Checks
