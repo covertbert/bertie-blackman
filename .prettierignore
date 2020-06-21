@@ -13,3 +13,5 @@ coverage
 .env*
 *.toml
 *.log
+storybook-static
+.vscode

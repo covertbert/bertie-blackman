@@ -7,7 +7,7 @@ describe('NavigationItem', () => {
   it('has target when the "external" prop is passed', () => {
     const props: NavigationItemProps = {
       external: true,
-      label: 'Outside',
+      label: 'outside',
       to: 'https://the-outside-world.com',
     }
 
@@ -21,7 +21,7 @@ describe('NavigationItem', () => {
 
   it('has no target when "external" prop is not passed', () => {
     const props: NavigationItemProps = {
-      label: 'Bed',
+      label: 'bed',
       to: '/bed',
     }
 
