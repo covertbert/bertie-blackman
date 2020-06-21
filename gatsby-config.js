@@ -7,6 +7,14 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
+  siteMetadata: {
+    description: 'A portfolio',
+    image: '/icons/icon-512x512.png',
+    lang: 'en',
+    title: 'bertie blackman',
+    titleTemplate: '%s · bertie blackman',
+    url: 'https://bertie.dev',
+  },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
@@ -82,12 +90,4 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify',
     },
   ],
-  siteMetadata: {
-    description: 'A portfolio',
-    image: '/icons/icon-512x512.png',
-    lang: 'en',
-    title: 'bertie blackman',
-    titleTemplate: '%s · bertie blackman',
-    url: 'https://bertie.dev',
-  },
 }

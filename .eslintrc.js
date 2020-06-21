@@ -50,7 +50,6 @@ module.exports = {
     'prefer-template': 1,
     'react/prop-types': 0,
     'react/self-closing-comp': 1,
-    'sort-keys': ['error', 'asc', { caseSensitive: true, minKeys: 2, natural: true }],
   },
   settings: {
     react: {
