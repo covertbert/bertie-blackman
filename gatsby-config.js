@@ -91,7 +91,7 @@ module.exports = {
       options: {
         headers: {
           '/*': [
-            `Feature-Policy: layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none';`,
+            `Feature-Policy: layout-animations 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none';`,
           ],
         },
       },
