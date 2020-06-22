@@ -88,6 +88,13 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*': [
+            `Feature-Policy: layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none';`,
+          ],
+        },
+      },
     },
   ],
 }
