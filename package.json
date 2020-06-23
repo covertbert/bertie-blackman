@@ -70,7 +70,7 @@
     "netlify-plugin-cypress": "^1.3.11",
     "prettier": "2.0.5",
     "tailwindcss": "^1.4.6",
-    "ts-jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.5"
   }
 }
