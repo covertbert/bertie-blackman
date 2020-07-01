@@ -30,7 +30,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
+    "@babel/core": "^7.10.4",
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
