@@ -1,13 +1,14 @@
 import React, { useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Document } from '@contentful/rich-text-types'
+import { useForm } from 'react-hook-form'
 
 import Page from '@layouts/page'
 import Section from '@layouts/section'
 import Hero from '@components/hero'
 import CTA from '@components/cta'
 import HR from '@components/hr'
-import { Form, FormRow, FormTextInput, FormTextAreaInput, FormSubmit } from '@components/form'
+import { Form, FormRow, FormTextInput, FormSubmit } from '@components/form'
 
 import { scrollToRef, convertRichText } from '@utils'
 
@@ -25,6 +26,12 @@ interface IndexQuery {
       json: Document
     }
   }
+}
+
+type ContactFormInputs = {
+  name: string
+  email: string
+  message: string
 }
 
 const App = () => {
@@ -51,6 +58,11 @@ const App = () => {
     }
   `)
 
+  const { register, handleSubmit } = useForm<ContactFormInputs>()
+  const onSubmit = (data: ContactFormInputs) => {
+    console.log(data)
+  }
+
   return (
     <Page title="home">
       <Hero heading={heroHeading} body={heroBody.json}>
@@ -67,15 +79,13 @@ const App = () => {
         <Section background="white" title="Contact">
           <div className="invisible" ref={contactForm} />
 
-          <Form>
+          <Form name="contact" onSubmit={handleSubmit(onSubmit)}>
             <FormRow>
-              <FormTextInput required label="name" width="half" className="mb-4 md:mb-0" />
-              <FormTextInput required label="email" width="half" />
+              <FormTextInput ref={register} label="name" width="half" className="mb-4 md:mb-0" />
+              <FormTextInput ref={register} label="email" width="half" />
             </FormRow>
 
-            <FormRow>
-              <FormTextAreaInput required label="message" />
-            </FormRow>
+            <FormRow>{/* <FormTextAreaInput ref={register} label="message" /> */}</FormRow>
 
             <FormSubmit text="Submit" />
           </Form>
