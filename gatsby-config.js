@@ -23,6 +23,7 @@ module.exports = {
       options: {
         alias: {
           '@components': path.resolve(__dirname, 'src/components'),
+          '@containers': path.resolve(__dirname, 'src/containers'),
           '@layouts': path.resolve(__dirname, 'src/layouts'),
           '@typings': path.resolve(__dirname, 'src/types'),
           '@utils': path.resolve(__dirname, 'src/utils'),

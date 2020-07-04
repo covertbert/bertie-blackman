@@ -20,12 +20,14 @@
     "cy:open": "cypress open"
   },
   "dependencies": {
+    "@hookform/resolvers": "^0.0.5",
     "gatsby": "^2.23.18",
     "gatsby-plugin-react-helmet": "^3.3.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^6.0.1"
+    "react-hook-form": "^6.0.1",
+    "yup": "^0.29.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -34,6 +36,7 @@
     "@types/classnames": "^2.2.10",
     "@types/jest": "^26.0.3",
     "@types/react-helmet": "^6.0.0",
+    "@types/yup": "^0.29.3",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
     "babel-loader": "^8.1.0",

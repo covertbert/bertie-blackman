@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface FormProps {
+export interface FormProps {
   name: string
   onSubmit: () => void
 }
