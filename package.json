@@ -29,7 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@contentful/rich-text-react-renderer": "^13.4.0",
-    "@testing-library/react": "^10.4.3",
+    "@testing-library/react": "^10.4.4",
     "@types/classnames": "^2.2.10",
     "@types/jest": "^26.0.3",
     "@types/react-helmet": "^6.0.0",
