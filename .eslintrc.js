@@ -32,6 +32,7 @@ module.exports = {
       files: ['**/*.{test,tests}.{ts,tsx}', '**/*.tsx', '__mocks__/**', 'cypress/**'],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 0,
+        '@typescript-eslint/explicit-module-boundary-types': 0,
       },
     },
   ],
