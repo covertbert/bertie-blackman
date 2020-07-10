@@ -7,7 +7,6 @@
     "clean": "gatsby clean",
     "build": "export $(egrep -v '^#' .env | xargs) && gatsby build",
     "build-ci": "gatsby build",
-    "ci": "yarn lint && yarn prettier:check && yarn test && yarn build-ci",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "start": "yarn develop",
@@ -16,8 +15,7 @@
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js",
     "test": "jest",
     "test:ci": "jest --coverage",
-    "tsc:repo": "tsc -p tsconfig.json --noEmit",
-    "cy:open": "cypress open"
+    "tsc:repo": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
     "gatsby": "^2.23.22",
@@ -38,7 +36,6 @@
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "classnames": "^2.2.6",
-    "cypress": "^4.10.0",
     "date-fns": "^2.14.0",
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
@@ -61,7 +58,6 @@
     "jest": "^26.1.0",
     "jest-svg-transformer": "^1.0.0",
     "lint-staged": "^10.2.11",
-    "netlify-plugin-cypress": "^1.3.11",
     "prettier": "2.0.5",
     "tailwindcss": "^1.4.6",
     "ts-jest": "^26.1.1",
