@@ -1,9 +1,4 @@
 [build]
-  base = "/"
-  publish = "public/"
-  command = "yarn ci"
-
-[[plugins]]
-  package = "netlify-plugin-cypress"
-  [plugins.inputs]
-    record = true
+base = "/"
+command = "yarn build"
+publish = "public/"
