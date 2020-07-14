@@ -27,7 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@contentful/rich-text-react-renderer": "^13.4.0",
-    "@testing-library/react": "^10.4.5",
+    "@testing-library/react": "^10.4.6",
     "@types/classnames": "^2.2.10",
     "@types/jest": "^26.0.4",
     "@types/react-helmet": "^6.0.0",
@@ -42,7 +42,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-react-hooks": "^4.0.6",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^2.3.11",
     "gatsby-plugin-manifest": "^2.4.17",
