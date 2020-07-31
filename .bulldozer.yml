@@ -4,3 +4,7 @@ merge:
   whitelist:
     labels: ['dependencies', 'lighthouse']
   method: squash
+
+update:
+  whitelist:
+    labels: ['dependencies', 'lighthouse']
