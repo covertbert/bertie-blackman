@@ -18,7 +18,7 @@
     "tsc:repo": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "gatsby": "^2.24.55",
+    "gatsby": "^2.24.56",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -59,7 +59,7 @@
     "jest-svg-transformer": "^1.0.0",
     "lint-staged": "^10.3.0",
     "prettier": "2.1.1",
-    "tailwindcss": "^1.8.5",
+    "tailwindcss": "^1.8.6",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   }
