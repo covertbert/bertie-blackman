@@ -3,7 +3,7 @@ name: Master
 on:
   push:
     branches:
-      - s3-deploy
+      - master
 
 jobs:
   test:
