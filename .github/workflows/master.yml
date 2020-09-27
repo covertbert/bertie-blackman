@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-16.04
-    name: Quality Checks
+    name: Build, Test & Upload
     env:
       AWS_REGION: us-east-1
 
@@ -40,6 +40,10 @@ jobs:
           bash <(curl -s https://codecov.io/bash)
 
       - name: Gatsby Build
+        env:
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
         run: npm run build-ci
 
       - name: S3 Deploy
