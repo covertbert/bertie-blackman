@@ -18,7 +18,7 @@
     "tsc:repo": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "gatsby": "^2.24.78",
+    "gatsby": "^2.24.80",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
