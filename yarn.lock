@@ -8465,10 +8465,10 @@ gatsby-plugin-manifest@^2.4.34:
     semver "^7.3.2"
     sharp "^0.25.4"
 
-gatsby-plugin-netlify@^2.3.19:
-  version "2.3.19"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.3.19.tgz#ef60572365a8d38cecf42a4fcb9216ee6b1059fe"
-  integrity sha512-kb7DqZICQAe1hdIxkMgfR8+4O7H35HUG/A2eQ8uXvqOCxmqcFGs1R/dpRAXs4hT4gjiJktY2ez0GF22XHcMNAw==
+gatsby-plugin-netlify@^2.3.20:
+  version "2.3.20"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.3.20.tgz#b534c54e6aa7d5fd806aae424d5b616ae7936c3d"
+  integrity sha512-2vGCKrZ75VbBNSGFhsRajapi4kthxfeMR5siZEp6eBjAhRJtHqioqjuhTY1ZkmDF286K5ETFqMMIr9AuuvRPsA==
   dependencies:
     "@babel/runtime" "^7.11.2"
     fs-extra "^8.1.0"
@@ -8572,7 +8572,7 @@ gatsby-plugin-sharp@^2.6.38:
     svgo "1.3.2"
     uuid "3.4.0"
 
-gatsby-plugin-typescript@^2.4.21, gatsby-plugin-typescript@^2.4.22:
+gatsby-plugin-typescript@^2.4.22:
   version "2.4.22"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.4.22.tgz#3aa8bb8a724c681350e6d08c237ba0e33bf63f8c"
   integrity sha512-kcFd5oz0M5mFXp/DtEtQ6cdNdbt0+/B+B6OdhKW/FRyVn+WWKbMDzqY8pnspTr2ACC+8iNk/2I7HZeo1ykKUVA==
