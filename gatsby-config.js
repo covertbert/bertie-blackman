@@ -66,17 +66,11 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
     },
     {
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          {
-            family: 'Bebas Neue',
-          },
-          {
-            family: 'Roboto',
-          },
-        ],
+        fonts: ['Roboto', 'Bebas Neue'],
+        display: 'swap',
       },
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
     },
     {
       options: {
