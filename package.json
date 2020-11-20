@@ -18,8 +18,8 @@
     "tsc:repo": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "gatsby": "^2.25.4",
-    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby": "^2.27.0",
+    "gatsby-plugin-react-helmet": "^3.5.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0"
@@ -48,7 +48,7 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.5.2",
     "gatsby-plugin-netlify": "^2.5.0",
-    "gatsby-plugin-offline": "^3.2.31",
+    "gatsby-plugin-offline": "^3.5.0",
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-svg": "^3.0.0",
@@ -61,6 +61,6 @@
     "prettier": "2.2.0",
     "tailwindcss": "^1.9.5",
     "ts-jest": "^26.4.4",
-    "typescript": "^4.0.2"
+    "typescript": "^4.1.2"
   }
 }
