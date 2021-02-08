@@ -51,6 +51,7 @@ module.exports = {
     'prefer-template': 1,
     'react/prop-types': 0,
     'react/self-closing-comp': 1,
+    '@typescript-eslint/no-unused-vars': 0,
   },
   settings: {
     react: {

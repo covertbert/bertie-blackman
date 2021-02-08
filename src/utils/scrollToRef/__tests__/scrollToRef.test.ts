@@ -6,7 +6,7 @@ describe('scrollToRef', () => {
   it('throws an error when the give ref has no "current" property', () => {
     const mockRef = ({ foo: 'bar' } as unknown) as MutableRefObject<HTMLElement>
 
-    expect(() => scrollToRef(mockRef)).toThrow()
+    expect(() => scrollToRef(mockRef)).toThrowError('Input ref is null')
   })
 
   it('calls window.scrollTo with the given offset', () => {
