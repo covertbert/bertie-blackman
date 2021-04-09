@@ -13,16 +13,14 @@ jobs:
       AWS_REGION: us-east-1
 
     steps:
-      - name: Log context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT" > context.json
-
-      - name: Upload context
-        uses: actions/upload-artifact@v2
+      - name: Get PR author
+        id: get-pr-author
+        uses: actions/github-script@v3
         with:
-          name: context
-          path: context.json
+          script: require(`${process.env.GITHUB_WORKSPACE}/__scripts__/get-merge-author.js`)
+
+      - name: Log things
+        run: echo ${{ steps.get-pr-author.outputs.author }}
 
       - name: 'Checking out from GitHub'
         uses: 'actions/checkout@v2'
