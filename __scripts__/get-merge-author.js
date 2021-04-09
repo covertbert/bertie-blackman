@@ -1,16 +1,16 @@
 /* eslint-disable no-undef */
 module.exports = ({ github, context }) => {
-  console.log('HJHGHGHG', context)
+  console.log('HJHGHGHG', context.payload.commits)
 
   const prHasAuthor =
-    github.event.commits[0] &&
-    github.event.commits[0].author &&
-    github.event.commits[0].author.username
+    context.payload.commits[0] &&
+    context.payload.commits[0].author &&
+    context.payload.commits[0].author.username
 
   if (prHasAuthor) {
-    const prAuthorUsername = github.event.commits[0].author.username
+    const prAuthorUsername = context.payload.commits[0].author.username
     core.setOutput('author', prAuthorUsername)
   }
 
-  core.setOutput('author', github.actor)
+  core.setOutput('author', context.actor)
 }
