@@ -14,6 +14,11 @@ const getAuthor = context => {
   return context.actor
 }
 
+// const getSquad = author => {}
+
 module.exports = ({ context, core }) => {
-  core.setOutput('author', getAuthor(context))
+  const author = getAuthor(context)
+
+  core.setOutput('author', author)
+  // core.setOutput('squad', getSquad(author))
 }
