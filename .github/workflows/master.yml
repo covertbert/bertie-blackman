@@ -20,7 +20,9 @@ jobs:
         id: get-pr-author
         uses: actions/github-script@v3
         with:
-          script: require(`${process.env.GITHUB_WORKSPACE}/__scripts__/get-merge-author.js`)()
+          script: |
+            const script = require(`${process.env.GITHUB_WORKSPACE}/__scripts__/get-merge-author.js`)
+            script({github})
 
       - name: Log things
         run: echo ${{ steps.get-pr-author.outputs.author }}
