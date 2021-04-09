@@ -1,16 +1,19 @@
 /* eslint-disable no-undef */
-module.exports = ({ context, core }) => {
-  console.log('HJHGHGHG', context.payload.commits[0].author)
 
-  const prHasAuthor =
+const getAuthor = context => {
+  const mergeCommitHasAuthor =
     context.payload.commits[0] &&
     context.payload.commits[0].author &&
     context.payload.commits[0].author.username
 
-  if (prHasAuthor) {
-    const prAuthorUsername = context.payload.commits[0].author.username
-    core.setOutput('author', prAuthorUsername)
+  if (mergeCommitHasAuthor) {
+    const mergeCommitUsername = context.payload.commits[0].author.username
+    return mergeCommitUsername
   }
 
-  core.setOutput('author', context.actor)
+  return context.actor
+}
+
+module.exports = ({ context, core }) => {
+  core.setOutput('author', getAuthor(context))
 }
