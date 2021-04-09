@@ -13,6 +13,15 @@ jobs:
       AWS_REGION: us-east-1
 
     steps:
+      - name: Log context
+        run: echo ${{ toJSON(github) }} > context.txt
+
+      - name: Upload context
+        uses: actions/upload-artifact@v2
+        with:
+          name: context
+          path: context.txt
+
       - name: 'Checking out from GitHub'
         uses: 'actions/checkout@v2'
 
