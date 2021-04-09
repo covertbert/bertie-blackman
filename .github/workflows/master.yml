@@ -24,8 +24,11 @@ jobs:
             const script = require(`${process.env.GITHUB_WORKSPACE}/__scripts__/get-merge-author.js`)
             script({context, core})
 
-      - name: Log things
+      - name: Log author
         run: echo ${{ steps.get-pr-author.outputs.author }}
+
+      - name: Log squad
+        run: echo ${{ steps.get-pr-author.outputs.squad }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
