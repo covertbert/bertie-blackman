@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-module.exports = ({ github }) => {
-  console.log('HJHGHGHG', github)
+module.exports = ({ github, context }) => {
+  console.log('HJHGHGHG', context)
 
   const prHasAuthor =
     github.event.commits[0] &&

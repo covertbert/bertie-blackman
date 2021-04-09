@@ -22,7 +22,7 @@ jobs:
         with:
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/__scripts__/get-merge-author.js`)
-            script({github})
+            script({github,context})
 
       - name: Log things
         run: echo ${{ steps.get-pr-author.outputs.author }}
