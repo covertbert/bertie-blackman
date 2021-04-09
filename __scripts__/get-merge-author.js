@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
 // Add your squad and users here
-const squads = {
+const allSquads = {
   search: ['covertbert', 'Pushedskydiver', 'kevcjones-cinch', 'scottbcodes', 'cinch-wilson'],
 }
 
@@ -19,17 +19,18 @@ const getAuthor = context => {
   return context.actor
 }
 
-const getSquad = author =>
-  Object.entries(squads).reduce(entry => {
-    const [squad, users] = entry
+const getSquad = (author, squads) =>
+  Object.entries(squads).reduce((previousValue, currentValue) => {
+    const [squad, users] = currentValue
     if (users.includes(author)) {
       return squad
     }
-  }, '')
+    return previousValue
+  }, 'shared')
 
 module.exports = ({ context, core }) => {
   const author = getAuthor(context)
 
   core.setOutput('author', author)
-  core.setOutput('squad', getSquad(author))
+  core.setOutput('squad', getSquad(author, allSquads))
 }
