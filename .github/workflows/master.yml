@@ -14,13 +14,15 @@ jobs:
 
     steps:
       - name: Log context
-        run: echo ${{ toJSON(github) }} > context.txt
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT" > context.json
 
       - name: Upload context
         uses: actions/upload-artifact@v2
         with:
           name: context
-          path: context.txt
+          path: context.json
 
       - name: 'Checking out from GitHub'
         uses: 'actions/checkout@v2'
