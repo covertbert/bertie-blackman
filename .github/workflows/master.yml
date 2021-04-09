@@ -16,20 +16,6 @@ jobs:
       - name: 'Checking out from GitHub'
         uses: 'actions/checkout@v2'
 
-      - name: Get PR author
-        id: get-pr-author
-        uses: actions/github-script@v3
-        with:
-          script: |
-            const script = require(`${process.env.GITHUB_WORKSPACE}/__scripts__/get-merge-author.js`)
-            script({context, core})
-
-      - name: Log author
-        run: echo ${{ steps.get-pr-author.outputs.author }}
-
-      - name: Log squad
-        run: echo ${{ steps.get-pr-author.outputs.squad }}
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
