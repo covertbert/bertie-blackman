@@ -10,7 +10,7 @@ import HR from '@components/hr'
 import WorkItem from '@components/work-item'
 import { WorkItem as WorkItemType } from '@typings'
 
-import { scrollToRef, convertRichText } from '@utils'
+import { convertRichText } from '@utils'
 
 interface IndexQuery {
   contentfulHero: {
@@ -132,7 +132,6 @@ const App = () => {
             logo={employer.logo}
             description={employer.description}
             dates={employer.dates}
-            hasHR={index + 1 < allContentfulWork.totalCount}
           />
         ))}
       </Section>

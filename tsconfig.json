@@ -25,6 +25,6 @@
     }
   },
   "typeAcquisition": { "include": ["jest"] },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "cdk/**/*"],
   "exclude": ["public", ".cache"]
 }

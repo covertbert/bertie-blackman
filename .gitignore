@@ -75,3 +75,7 @@ yarn-error.log
 reports
 
 .yarn/cache
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
