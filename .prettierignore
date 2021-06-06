@@ -14,3 +14,7 @@ coverage
 *.toml
 *.log
 .vscode
+.yarn
+.stryker-tmp
+reports
+scripts

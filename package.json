@@ -5,7 +5,7 @@
   "description": "My portfolio site",
   "scripts": {
     "clean": "gatsby clean",
-    "build": "export $(egrep -v '^#' .env | xargs) && gatsby build",
+    "build": "./scripts/build-local.sh",
     "build-ci": "gatsby build",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
