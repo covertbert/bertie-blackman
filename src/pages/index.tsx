@@ -110,7 +110,7 @@ const App = () => {
           text="contact me"
           className="mt-8"
           handleClick={() => {
-            window.location.href = `mailto:info@bertie.dev`
+            window.location.href = `mailto:me@bertie.dev`
           }}
         />
       </Hero>
