@@ -37,6 +37,12 @@ export class StaticWebsiteStack extends Stack {
       bucketName: bucketName,
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
+      blockPublicAccess: {
+        blockPublicAcls: true,
+        blockPublicPolicy: true,
+        ignorePublicAcls: true,
+        restrictPublicBuckets: true,
+      },
       encryption: BucketEncryption.S3_MANAGED,
     })
 
@@ -58,6 +64,10 @@ export class StaticWebsiteStack extends Stack {
       domainNames: [domainName, fullApexDomain],
       defaultRootObject: 'index.html',
       certificate: Certificate.fromCertificateArn(this, 'CertificateARN', certificateARN),
+      errorResponses: [
+        { httpStatus: 403, responseHttpStatus: 404, responsePagePath: '/404.html' },
+        { httpStatus: 404, responseHttpStatus: 404, responsePagePath: '/404.html' },
+      ],
       defaultBehavior: {
         viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         origin: new S3Origin(websiteBucket, {
