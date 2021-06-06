@@ -6,15 +6,13 @@ import {
   StorageClass,
   ServerSideEncryption,
 } from '@aws-cdk/aws-s3-deployment'
-import {
-  OriginAccessIdentity,
-  CloudFrontWebDistributionProps,
-  CloudFrontWebDistribution,
-} from '@aws-cdk/aws-cloudfront'
+import { OriginAccessIdentity, Distribution, ViewerProtocolPolicy } from '@aws-cdk/aws-cloudfront'
 import { PolicyStatement, CanonicalUserPrincipal } from '@aws-cdk/aws-iam'
 import { ARecord, AaaaRecord, RecordTarget } from '@aws-cdk/aws-route53'
 import { CloudFrontTarget } from '@aws-cdk/aws-route53-targets'
 import { PublicHostedZone } from '@aws-cdk/aws-route53'
+import { Certificate } from '@aws-cdk/aws-certificatemanager'
+import { S3Origin } from '@aws-cdk/aws-cloudfront-origins'
 
 export class StaticWebsiteStack extends Stack {
   constructor(scope: App, id: string, props: StackProps) {
@@ -35,14 +33,11 @@ export class StaticWebsiteStack extends Stack {
       zoneName: 'bertie.dev',
     })
 
-    const websiteBucket = new Bucket(this, bucketName, {
+    const websiteBucket = new Bucket(this, 'SiteBucket', {
       bucketName: bucketName,
-      websiteIndexDocument: 'index.html',
-      websiteErrorDocument: 'index.html',
       removalPolicy: RemovalPolicy.DESTROY,
-      blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
-      encryption: BucketEncryption.S3_MANAGED,
       autoDeleteObjects: true,
+      encryption: BucketEncryption.S3_MANAGED,
     })
 
     const cloudfrontOAI = new OriginAccessIdentity(this, 'OAI', {
@@ -59,52 +54,43 @@ export class StaticWebsiteStack extends Stack {
 
     websiteBucket.addToResourcePolicy(cloudfrontS3Access)
 
-    const cloudfrontDistProps: CloudFrontWebDistributionProps = {
-      aliasConfiguration: {
-        acmCertRef: certificateARN,
-        names: [domainName, fullApexDomain],
+    const cloudfrontDistribution = new Distribution(this, 'CloudfrontDistribution', {
+      domainNames: [domainName, fullApexDomain],
+      defaultRootObject: 'index.html',
+      certificate: Certificate.fromCertificateArn(this, 'CertificateARN', certificateARN),
+      defaultBehavior: {
+        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        origin: new S3Origin(websiteBucket, {
+          originAccessIdentity: cloudfrontOAI,
+          originPath: '/',
+        }),
       },
-      originConfigs: [
-        {
-          s3OriginSource: {
-            s3BucketSource: websiteBucket,
-            originAccessIdentity: cloudfrontOAI,
-          },
-          behaviors: [{ isDefaultBehavior: true }],
-        },
-      ],
-    }
-
-    const cloudfrontDist = new CloudFrontWebDistribution(
-      this,
-      `${websiteName}-cfd`,
-      cloudfrontDistProps,
-    )
+    })
 
     new BucketDeployment(this, 'deployStaticWebsite', {
       sources: [Source.asset('../public')],
       destinationBucket: websiteBucket,
-      distribution: cloudfrontDist,
+      distribution: cloudfrontDistribution,
       storageClass: StorageClass.INTELLIGENT_TIERING,
       serverSideEncryption: ServerSideEncryption.AES_256,
     })
 
     const www = new ARecord(this, 'WWWBertieDevARecord', {
-      target: RecordTarget.fromAlias(new CloudFrontTarget(cloudfrontDist)),
+      target: RecordTarget.fromAlias(new CloudFrontTarget(cloudfrontDistribution)),
       zone: hostedZone,
       recordName: fullApexDomain,
       ttl: Duration.seconds(60),
     })
 
     new ARecord(this, 'NakedBertieDevARecord', {
-      target: RecordTarget.fromAlias(new CloudFrontTarget(cloudfrontDist)),
+      target: RecordTarget.fromAlias(new CloudFrontTarget(cloudfrontDistribution)),
       zone: hostedZone,
       recordName: domainName,
       ttl: Duration.seconds(60),
     })
 
     new AaaaRecord(this, 'NakedBertieDevAAARecord', {
-      target: RecordTarget.fromAlias(new CloudFrontTarget(cloudfrontDist)),
+      target: RecordTarget.fromAlias(new CloudFrontTarget(cloudfrontDistribution)),
       zone: hostedZone,
       recordName: domainName,
       ttl: Duration.seconds(60),
@@ -112,7 +98,7 @@ export class StaticWebsiteStack extends Stack {
 
     new CfnOutput(this, 'cloudfront-url', {
       exportName: 'CloudfrontURL',
-      value: cloudfrontDist.distributionDomainName,
+      value: cloudfrontDistribution.distributionDomainName,
     })
 
     new CfnOutput(this, 'www-url', {
