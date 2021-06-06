@@ -3,6 +3,9 @@
   "license": "MIT",
   "name": "bertie-blackman",
   "description": "My portfolio site",
+  "workspaces": [
+    "cdk"
+  ],
   "scripts": {
     "clean": "gatsby clean",
     "build": "./scripts/build-local.sh",
@@ -26,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@cloudcomponents/cdk-static-website": "^1.38.0",
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@stryker-mutator/core": "^4.4.1",
     "@stryker-mutator/jest-runner": "^4.5.0",
