@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build, Test & Upload
     env:
-      AWS_REGION: us-east-1
+      AWS_REGION: eu-west-2
 
     steps:
       - name: 'Checking out from GitHub'
