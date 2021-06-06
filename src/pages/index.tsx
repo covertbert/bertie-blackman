@@ -7,7 +7,8 @@ import Section from '@layouts/section'
 import Hero from '@components/hero'
 import CTA from '@components/cta'
 import HR from '@components/hr'
-import { Form, FormRow, FormTextInput, FormTextAreaInput, FormSubmit } from '@components/form'
+import WorkItem from '@components/work-item'
+import { WorkItem as WorkItemType } from '@typings'
 
 import { scrollToRef, convertRichText } from '@utils'
 
@@ -19,7 +20,19 @@ interface IndexQuery {
     }
   }
 
-  contentfulSection: {
+  allContentfulWork: {
+    totalCount: number
+    nodes: WorkItemType[]
+  }
+
+  aboutSection: {
+    heading: string
+    body: {
+      json: Document
+    }
+  }
+
+  workSection: {
     heading: string
     body: {
       json: Document
@@ -27,13 +40,24 @@ interface IndexQuery {
   }
 }
 
+const getWorkItemsFromQuery = ({
+  allContentfulWork: { nodes },
+}: Pick<IndexQuery, 'allContentfulWork'>) =>
+  nodes.map(({ employerName, logo, dateFrom, dateTo, description }) => ({
+    dates: { from: dateFrom, to: dateTo },
+    description: description.json,
+    employerName,
+    logo: { alt: logo.title, url: logo.file.url },
+  }))
+
 const App = () => {
   const contactForm = useRef(null)
-  const executeScroll = () => scrollToRef<HTMLDivElement>(contactForm)
 
   const {
     contentfulHero: { heading: heroHeading, body: heroBody },
-    contentfulSection: { heading: sectionHeading, body: sectionBody },
+    aboutSection: { heading: aboutHeading, body: aboutBody },
+    workSection: { heading: workHeading, body: workBody },
+    allContentfulWork,
   } = useStaticQuery<IndexQuery>(graphql`
     query IndexQuery {
       contentfulHero(slug: { eq: "software-engineer" }) {
@@ -42,7 +66,31 @@ const App = () => {
           json
         }
       }
-      contentfulSection(slug: { eq: "about-me" }) {
+      allContentfulWork(sort: { fields: dateTo, order: DESC }) {
+        totalCount
+        nodes {
+          employerName
+          dateFrom(formatString: "MMMM YYYY")
+          dateTo(formatString: "MMMM YYYY")
+          description {
+            json
+          }
+          logo {
+            file {
+              url
+            }
+            title
+          }
+        }
+        totalCount
+      }
+      aboutSection: contentfulSection(slug: { eq: "about-me" }) {
+        heading
+        body {
+          json
+        }
+      }
+      workSection: contentfulSection(slug: { eq: "index-work" }) {
         heading
         body {
           json
@@ -51,36 +99,43 @@ const App = () => {
     }
   `)
 
+  const employerData = getWorkItemsFromQuery({
+    allContentfulWork,
+  })
+
   return (
     <Page title="home">
       <Hero heading={heroHeading} body={heroBody.json}>
-        <CTA text="contact me" className="mt-8" handleClick={executeScroll} />
+        <CTA
+          text="contact me"
+          className="mt-8"
+          handleClick={() => {
+            window.location.href = `mailto:info@bertie.dev`
+          }}
+        />
       </Hero>
 
       <main>
-        <Section title={sectionHeading}>
-          <div className="max-w-4xl">{convertRichText(sectionBody.json)}</div>
+        <Section title={aboutHeading}>
+          <div className="max-w-6xl">{convertRichText(aboutBody.json)}</div>
         </Section>
 
         <HR />
-
-        <Section background="white" title="Contact">
-          <div className="invisible" ref={contactForm} />
-
-          <Form>
-            <FormRow>
-              <FormTextInput required label="name" width="half" className="mb-4 md:mb-0" />
-              <FormTextInput required label="email" width="half" />
-            </FormRow>
-
-            <FormRow>
-              <FormTextAreaInput required label="message" />
-            </FormRow>
-
-            <FormSubmit text="Submit" />
-          </Form>
-        </Section>
       </main>
+
+      <Section title={workHeading}>
+        <div className="max-w-6xl">{convertRichText(workBody.json)}</div>
+
+        {employerData.map((employer, index) => (
+          <WorkItem
+            key={employer.employerName}
+            logo={employer.logo}
+            description={employer.description}
+            dates={employer.dates}
+            hasHR={index + 1 < allContentfulWork.totalCount}
+          />
+        ))}
+      </Section>
     </Page>
   )
 }

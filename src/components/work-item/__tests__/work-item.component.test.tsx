@@ -49,9 +49,4 @@ describe('WorkItem', () => {
 
     expect(getByText('house - Current')).toBeTruthy()
   })
-
-  it('renders an HR when it the prop is true', () => {
-    const { container } = render(<WorkItem {...props} hasHR />)
-    expect(container.querySelector('hr')!.classList.contains('border-primary')).toBeTruthy()
-  })
 })

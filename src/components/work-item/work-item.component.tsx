@@ -1,7 +1,6 @@
 import React from 'react'
 import { Document } from '@contentful/rich-text-types'
 
-import Section from '@layouts/section'
 import HR from '@components/hr'
 import { convertRichText } from '@utils'
 
@@ -15,13 +14,12 @@ export interface WorkItemProps {
     to?: string
   }
   description: Document
-  hasHR?: boolean
 }
 
-const WorkItem: React.FC<WorkItemProps> = ({ logo, dates, description, hasHR }) => (
+const WorkItem: React.FC<WorkItemProps> = ({ logo, dates, description }) => (
   <>
-    <Section>
-      <div className="max-w-4xl text-lg">
+    <section className={'flex flex-col py-6 text-lg bg-white'}>
+      <div className="max-w-6xl text-lg">
         <img src={logo.url} alt={logo.alt} className="h-8" />
 
         <p className="mt-6 mb-4 font-bold">
@@ -30,9 +28,7 @@ const WorkItem: React.FC<WorkItemProps> = ({ logo, dates, description, hasHR }) 
 
         {convertRichText(description)}
       </div>
-    </Section>
-
-    {hasHR && <HR />}
+    </section>
   </>
 )
 
