@@ -156,7 +156,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-cdk/aws-cloudfront@npm:1.107.0, @aws-cdk/aws-cloudfront@npm:^1.106.1":
+"@aws-cdk/aws-cloudfront-origins@npm:^1.107.0":
+  version: 1.107.0
+  resolution: "@aws-cdk/aws-cloudfront-origins@npm:1.107.0"
+  dependencies:
+    "@aws-cdk/aws-cloudfront": 1.107.0
+    "@aws-cdk/aws-elasticloadbalancingv2": 1.107.0
+    "@aws-cdk/aws-iam": 1.107.0
+    "@aws-cdk/aws-s3": 1.107.0
+    "@aws-cdk/core": 1.107.0
+    constructs: ^3.3.69
+  peerDependencies:
+    "@aws-cdk/aws-cloudfront": 1.107.0
+    "@aws-cdk/aws-elasticloadbalancingv2": 1.107.0
+    "@aws-cdk/aws-iam": 1.107.0
+    "@aws-cdk/aws-s3": 1.107.0
+    "@aws-cdk/core": 1.107.0
+    constructs: ^3.3.69
+  checksum: 72a1e8e4ac2ffa9ac58312bb7b01f643faab449bca1f16a338cc7ca38db15b7b65575351b68ebc357d55f08050c2d1cffd430e5969f97446f6fad09236b8a533
+  languageName: node
+  linkType: hard
+
+"@aws-cdk/aws-cloudfront@npm:1.107.0":
   version: 1.107.0
   resolution: "@aws-cdk/aws-cloudfront@npm:1.107.0"
   dependencies:
@@ -410,7 +431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-cdk/aws-iam@npm:1.107.0, @aws-cdk/aws-iam@npm:^1.106.1":
+"@aws-cdk/aws-iam@npm:1.107.0":
   version: 1.107.0
   resolution: "@aws-cdk/aws-iam@npm:1.107.0"
   dependencies:
@@ -508,7 +529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-cdk/aws-route53-targets@npm:^1.106.1":
+"@aws-cdk/aws-route53-targets@npm:^1.107.0":
   version: 1.107.0
   resolution: "@aws-cdk/aws-route53-targets@npm:1.107.0"
   dependencies:
@@ -543,7 +564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-cdk/aws-route53@npm:1.107.0, @aws-cdk/aws-route53@npm:^1.106.1":
+"@aws-cdk/aws-route53@npm:1.107.0":
   version: 1.107.0
   resolution: "@aws-cdk/aws-route53@npm:1.107.0"
   dependencies:
@@ -589,7 +610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-cdk/aws-s3-deployment@npm:^1.106.1, @aws-cdk/aws-s3-deployment@npm:^1.107.0":
+"@aws-cdk/aws-s3-deployment@npm:^1.107.0":
   version: 1.107.0
   resolution: "@aws-cdk/aws-s3-deployment@npm:1.107.0"
   dependencies:
@@ -616,7 +637,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-cdk/aws-s3@npm:1.107.0, @aws-cdk/aws-s3@npm:^1.106.1":
+"@aws-cdk/aws-s3@npm:1.107.0":
   version: 1.107.0
   resolution: "@aws-cdk/aws-s3@npm:1.107.0"
   dependencies:
@@ -745,7 +766,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-cdk/core@npm:1.107.0, @aws-cdk/core@npm:^1.106.1":
+"@aws-cdk/core@npm:1.107.0":
   version: 1.107.0
   resolution: "@aws-cdk/core@npm:1.107.0"
   dependencies:
@@ -2787,30 +2808,6 @@ __metadata:
   version: 0.2.3
   resolution: "@bcoe/v8-coverage@npm:0.2.3"
   checksum: 4fc6fb784b09d2e994fc9180dc8af9f674a4e5114cd2c52754e689f87725e670d0919728945fe3991d434109e42e5ac6f9d85c58a566e2a645eb9dda68eead6a
-  languageName: node
-  linkType: hard
-
-"@cloudcomponents/cdk-static-website@npm:^1.38.0":
-  version: 1.38.0
-  resolution: "@cloudcomponents/cdk-static-website@npm:1.38.0"
-  dependencies:
-    "@aws-cdk/aws-cloudfront": ^1.106.1
-    "@aws-cdk/aws-iam": ^1.106.1
-    "@aws-cdk/aws-route53": ^1.106.1
-    "@aws-cdk/aws-route53-targets": ^1.106.1
-    "@aws-cdk/aws-s3": ^1.106.1
-    "@aws-cdk/aws-s3-deployment": ^1.106.1
-    "@aws-cdk/core": ^1.106.1
-  peerDependencies:
-    "@aws-cdk/aws-cloudfront": ^1.106.1
-    "@aws-cdk/aws-iam": ^1.106.1
-    "@aws-cdk/aws-route53": ^1.106.1
-    "@aws-cdk/aws-route53-targets": ^1.106.1
-    "@aws-cdk/aws-s3": ^1.106.1
-    "@aws-cdk/aws-s3-deployment": ^1.106.1
-    "@aws-cdk/core": ^1.106.1
-    constructs: ^3.2.0
-  checksum: 540aea35aa8224a42b8f8bb79dd7e1b961f79d06946cc75f0559eb284c39974b3acffda7a030652361941f1ea607a79cbcacc835aaaf15ffdff202edcbb9a984
   languageName: node
   linkType: hard
 
@@ -6553,7 +6550,6 @@ __metadata:
   resolution: "bertie-blackman@workspace:."
   dependencies:
     "@babel/core": ^7.14.3
-    "@cloudcomponents/cdk-static-website": ^1.38.0
     "@contentful/rich-text-react-renderer": ^13.4.0
     "@stryker-mutator/core": ^4.4.1
     "@stryker-mutator/jest-runner": ^4.5.0
@@ -7461,6 +7457,8 @@ __metadata:
   resolution: "cdk@workspace:cdk"
   dependencies:
     "@aws-cdk/assert": 1.107.0
+    "@aws-cdk/aws-cloudfront-origins": ^1.107.0
+    "@aws-cdk/aws-route53-targets": ^1.107.0
     "@aws-cdk/aws-s3-deployment": ^1.107.0
     "@aws-cdk/core": 1.107.0
     "@types/jest": ^26.0.10
