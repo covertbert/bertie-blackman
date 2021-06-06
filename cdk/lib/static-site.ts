@@ -16,9 +16,12 @@ export class StaticWebsiteStack extends Stack {
     super(scope, id, props)
 
     const websiteName = 'bertie-blackman'
+
     const bucketName = `${websiteName}-artifacts`
-    const recordName = 'www'
+
     const domainName = 'bertie.dev'
+    const fullApexDomain = ['www', domainName].join('.')
+
     const certificateARN =
       'arn:aws:acm:us-east-1:515213366596:certificate/904b7400-ca9a-4f45-8f77-91deccfd79c1'
 
@@ -26,8 +29,6 @@ export class StaticWebsiteStack extends Stack {
       hostedZoneId: 'Z071345722DA6HTUYZ248',
       zoneName: 'bertie.dev',
     })
-
-    const fullApexDomain = [recordName, domainName].join('.')
 
     const websiteBucket = new Bucket(this, bucketName, {
       bucketName: bucketName,
