@@ -1,6 +1,11 @@
 import { Stack, App, StackProps, RemovalPolicy, CfnOutput, Duration } from '@aws-cdk/core'
 import { Bucket, BlockPublicAccess, BucketEncryption } from '@aws-cdk/aws-s3'
-import { BucketDeployment, Source } from '@aws-cdk/aws-s3-deployment'
+import {
+  BucketDeployment,
+  Source,
+  StorageClass,
+  ServerSideEncryption,
+} from '@aws-cdk/aws-s3-deployment'
 import {
   OriginAccessIdentity,
   CloudFrontWebDistributionProps,
@@ -40,11 +45,6 @@ export class StaticWebsiteStack extends Stack {
       autoDeleteObjects: true,
     })
 
-    new BucketDeployment(this, 'deployStaticWebsite', {
-      sources: [Source.asset('../public')],
-      destinationBucket: websiteBucket,
-    })
-
     const cloudfrontOAI = new OriginAccessIdentity(this, 'OAI', {
       comment: `CloudFront OAI for ${websiteName}`,
     })
@@ -80,6 +80,14 @@ export class StaticWebsiteStack extends Stack {
       `${websiteName}-cfd`,
       cloudfrontDistProps,
     )
+
+    new BucketDeployment(this, 'deployStaticWebsite', {
+      sources: [Source.asset('../public')],
+      destinationBucket: websiteBucket,
+      distribution: cloudfrontDist,
+      storageClass: StorageClass.INTELLIGENT_TIERING,
+      serverSideEncryption: ServerSideEncryption.AES_256,
+    })
 
     const www = new ARecord(this, 'WWWBertieDevARecord', {
       target: RecordTarget.fromAlias(new CloudFrontTarget(cloudfrontDist)),
