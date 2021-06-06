@@ -32,7 +32,6 @@ jobs:
           key: v1-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Yarn install
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn
 
       - name: Unit tests
