@@ -70,8 +70,6 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-bin
-
 # stryker temp files
 .stryker-tmp
 reports
