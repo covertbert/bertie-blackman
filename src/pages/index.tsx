@@ -121,20 +121,20 @@ const App = () => {
         </Section>
 
         <HR />
+
+        <Section title={workHeading}>
+          <div className="max-w-6xl">{convertRichText(workBody.json)}</div>
+
+          {employerData.map((employer, index) => (
+            <WorkItem
+              key={employer.employerName}
+              logo={employer.logo}
+              description={employer.description}
+              dates={employer.dates}
+            />
+          ))}
+        </Section>
       </main>
-
-      <Section title={workHeading}>
-        <div className="max-w-6xl">{convertRichText(workBody.json)}</div>
-
-        {employerData.map((employer, index) => (
-          <WorkItem
-            key={employer.employerName}
-            logo={employer.logo}
-            description={employer.description}
-            dates={employer.dates}
-          />
-        ))}
-      </Section>
     </Page>
   )
 }
