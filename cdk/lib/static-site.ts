@@ -5,6 +5,7 @@ import {
   Source,
   StorageClass,
   ServerSideEncryption,
+  CacheControl,
 } from '@aws-cdk/aws-s3-deployment'
 import { OriginAccessIdentity, Distribution, ViewerProtocolPolicy } from '@aws-cdk/aws-cloudfront'
 import { PolicyStatement, CanonicalUserPrincipal } from '@aws-cdk/aws-iam'
@@ -85,6 +86,7 @@ export class StaticWebsiteStack extends Stack {
       storageClass: StorageClass.INTELLIGENT_TIERING,
       serverSideEncryption: ServerSideEncryption.AES_256,
       destinationKeyPrefix: 'www',
+      cacheControl: [CacheControl.fromString('public, max-age=0, must-revalidate')],
     })
 
     const www = new ARecord(this, 'WWWBertieDevARecord', {
