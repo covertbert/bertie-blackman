@@ -46,6 +46,13 @@ jobs:
           ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
         run: npm run build-ci
 
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: CDK deploy
         working-directory: cdk
         run: yarn deploy
