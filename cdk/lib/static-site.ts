@@ -44,6 +44,7 @@ export class StaticWebsiteStack extends Stack {
         restrictPublicBuckets: true,
       },
       encryption: BucketEncryption.S3_MANAGED,
+      versioned: true,
     })
 
     const cloudfrontOAI = new OriginAccessIdentity(this, 'OAI', {
