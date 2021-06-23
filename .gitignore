@@ -79,3 +79,4 @@ reports
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+.yarn/install-state.gz
