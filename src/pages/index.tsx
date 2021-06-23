@@ -105,7 +105,7 @@ const App = () => {
 
   return (
     <Page title="home">
-      <Hero heading={heroHeading} body={heroBody.json}>
+      <Hero heading={'WOOOOOO'} body={heroBody.json}>
         <CTA
           text="contact me"
           className="mt-8"
