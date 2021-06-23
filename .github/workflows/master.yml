@@ -24,6 +24,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Copy previous build to rollback directory
+        run: aws s3 sync s3://bertie-blackman-artifacts/www s3://bertie-blackman-artifacts/www-rollback/${{ github.run_number }}
+
       - name: Restore node_modules
         id: cache-node-modules
         uses: actions/cache@master
@@ -45,9 +48,6 @@ jobs:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
         run: npm run build-ci
-
-      - name: Copy previous build to rollback directory
-        run: aws s3 sync s3://bertie-blackman-artifacts/www s3://bertie-blackman-artifacts/www-rollback
 
       - name: CDK deploy
         working-directory: cdk

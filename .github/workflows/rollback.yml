@@ -2,6 +2,10 @@ name: Rollback
 
 on:
   workflow_dispatch:
+    inputs:
+      run-number:
+        description: 'The GitHub Actions run number that you want to roll back to.'
+        required: true
 
 jobs:
   test:
@@ -19,4 +23,4 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Copy rollback to current www directory
-        run: aws s3 sync s3://bertie-blackman-artifacts/www-rollback s3://bertie-blackman-artifacts/www
+        run: aws s3 sync s3://bertie-blackman-artifacts/www-rollback/${{ github.event.inputs.run-number }} s3://bertie-blackman-artifacts/www
