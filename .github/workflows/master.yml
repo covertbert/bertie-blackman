@@ -47,7 +47,7 @@ jobs:
         run: npm run build-ci
 
       - name: Copy previous build to rollback directory
-        run: aws s3 cp --recursive s3://bertie-blackman-artifacts/www s3://bertie-blackman-artifacts/www-rollback
+        run: aws s3 sync s3://bertie-blackman-artifacts/www s3://bertie-blackman-artifacts/www-rollback
 
       - name: CDK deploy
         working-directory: cdk

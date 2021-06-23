@@ -19,4 +19,4 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Copy rollback to current www directory
-        run: aws s3 cp --recursive s3://bertie-blackman-artifacts/www-rollback s3://bertie-blackman-artifacts/www
+        run: aws s3 sync s3://bertie-blackman-artifacts/www-rollback s3://bertie-blackman-artifacts/www
