@@ -46,6 +46,9 @@ jobs:
           ANALYTICS_TRACKING_ID: ${{ secrets.ANALYTICS_TRACKING_ID }}
         run: npm run build-ci
 
+      - name: Copy previous build to rollback directory
+        run: aws s3 cp --recursive s3://bertie-blackman-artifacts/www s3://bertie-blackman-artifacts/www-rollback
+
       - name: CDK deploy
         working-directory: cdk
         run: yarn deploy
