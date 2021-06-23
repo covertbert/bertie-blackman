@@ -1,5 +1,5 @@
 import { Stack, App, StackProps, RemovalPolicy, CfnOutput, Duration } from '@aws-cdk/core'
-import { Bucket, BlockPublicAccess, BucketEncryption } from '@aws-cdk/aws-s3'
+import { Bucket, BucketEncryption } from '@aws-cdk/aws-s3'
 import {
   BucketDeployment,
   Source,
@@ -73,7 +73,7 @@ export class StaticWebsiteStack extends Stack {
         viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         origin: new S3Origin(websiteBucket, {
           originAccessIdentity: cloudfrontOAI,
-          originPath: '/',
+          originPath: '/www',
         }),
       },
     })
@@ -84,6 +84,7 @@ export class StaticWebsiteStack extends Stack {
       distribution: cloudfrontDistribution,
       storageClass: StorageClass.INTELLIGENT_TIERING,
       serverSideEncryption: ServerSideEncryption.AES_256,
+      destinationKeyPrefix: 'www',
     })
 
     const www = new ARecord(this, 'WWWBertieDevARecord', {
