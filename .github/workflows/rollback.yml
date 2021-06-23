@@ -1,0 +1,22 @@
+name: Rollback
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Rollback
+    env:
+      AWS_REGION: eu-west-2
+
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Copy rollback to current www directory
+        run: aws s3 cp --recursive s3://bertie-blackman-artifacts/www-rollback s3://bertie-blackman-artifacts/www
