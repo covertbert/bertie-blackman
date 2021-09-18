@@ -17,14 +17,14 @@
     "@aws-cdk/aws-s3-deployment": "^1.109.0",
     "@types/jest": "^26.0.10",
     "@types/node": "15.12.1",
-    "aws-cdk": "1.122.0",
+    "aws-cdk": "1.123.0",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
     "ts-node": "^10.2.1",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.122.0",
+    "@aws-cdk/core": "1.123.0",
     "source-map-support": "^0.5.20"
   }
 }
