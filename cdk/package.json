@@ -17,7 +17,7 @@
     "@aws-cdk/aws-s3-deployment": "^1.109.0",
     "@types/jest": "^26.0.10",
     "@types/node": "15.12.1",
-    "aws-cdk": "1.123.0",
+    "aws-cdk": "1.124.0",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
     "ts-node": "^10.2.1",
