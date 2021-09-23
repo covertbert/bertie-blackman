@@ -1,4 +1,4 @@
-# Welcome to my portfolio 👋
+# Welcome to my PORTFOLIO 👋
 
 <p>
   <a href="https://github.com/covertbert/bertie-blackman/actions?query=workflow%3AMaster" target="_blank">
