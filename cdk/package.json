@@ -13,7 +13,7 @@
     "@aws-cdk/assert": "1.134.0",
     "@aws-cdk/aws-cloudfront-origins": "1.124.0",
     "@aws-cdk/aws-route53-targets": "1.124.0",
-    "@aws-cdk/aws-s3": "1.134.0",
+    "@aws-cdk/aws-s3": "1.181.1",
     "@aws-cdk/aws-s3-deployment": "1.124.0",
     "@aws-cdk/core": "1.124.0",
     "@types/jest": "^26.0.10",
